@@ -1,70 +1,72 @@
 ## Gutenberg
 
-**Gutenberg** es una pequeña biblioteca. Administra préstamos de libros y revistas, así como los propios libros.
+**Gutenberg** es una pequeña biblioteca. Administra préstamos de libros y revistas, así como los propios libros y revistas.
 
 
 ## Lista de recursos
 
-* *Libro*: es la representación de un libro físico.
-* *Autor*: se refiere a la persona creadora del libro.
-* *Revista*: colección de artículos relacionados por un tema general.
-* *Usuario*: usuario de la aplicación. Puede ver libros y obtenerlos para un préstamo. Algunos usuarios pueden tener la capacidad de realizar tareas administrativas.
-* *Categoría*: es un contenedor lógico de propósito general, utilizado para organizar categorías más precisas. Ejemplos: Negocios, Política, Tecnología, Derecho.
-* *Subcategoría*: un contenedor lógico y específico. Ejemplos: Ciencia Ficción, Novela Romántica de Vampiros, etc...
+* **Libro**: es la representación de un libro físico.
+* **Autor**: se refiere a la persona creadora del libro.
+* **Revista**: colección de artículos relacionados por un tema general.
+* **Usuario**: usuario de la aplicación. Puede ver libros y obtenerlos para un préstamo. Algunos usuarios pueden tener la capacidad de realizar tareas administrativas.
+* **Categoría**: es un contenedor lógico de propósito general, utilizado para organizar categorías más precisas. Ejemplos: Negocios, Política, Tecnología, Derecho.
+* **Subcategoría**: un contenedor lógico y específico. Ejemplos: Ciencia Ficción, Novela Romántica de Vampiros, etc...
 
 
 ## Matriz de relaciones
 
-_            | Libro |   Autor  | Revista | Usuario | Editorial | Categoría | Subcategoría
-             | ----- | -------- | ------- | ------- | --------  | --------- | -----------
-Libro        |       |  n-n     |         |   n-n   | n-1       |   n-1     |  n-n
-Autor        |       |          |         |         |           |           | 
-Revista      |       |          |         |   n-n   |           |           |
-Usuario      |       |          |         |         |           |           |
-Categoría    |       |          |         |         |           |           |  1-n
-Subcategoría |       |          |         |         |           |           |
+
+ | Libro | Autor | Revista | Usuario | Editorial | Categoría | Subcategoría
+----|----|:----:|----|:----:|:----:|:----:|:----:|:----:
+**Libro** | | N - N | | N - N | N - 1 | N - 1 | N - N
+**Autor** | | | | | | |
+**Revista** | | | | N - N | | |
+**Usuario** | | | | | | |
+**Editorial** | | | | | | |
+**Categoría** | | | | | | | 1 - N
+**Subcategoría** | | | | | | |
 
 
 ## Tablas
 
-* Books
+* **Books**
     * id (isbn)
     * title
     * published_date
     * pages
     * copies
-    + publishing_house_id
-    + category_id
-* Authors_Books
-* Books_Subcategories
-* Books_Users
-* Authors
+    * publishing_house_id
+    * category_id
+* **Authors_Books**
+* **Books_Subcategories**
+* **Books_Users**
+* **Authors**
     * id
     * first_name
     * last_name
     * nationality (?!)
     * born_date (?!)
-* Magazines
+* **Magazines**
     * id
     * title
     * volume
     * published_date
     * copies
-* Magazines_Users
-* Users
+* **Magazines_Users**
+* **Users**
     * id
     * first_name
     * last_name
     * email
     * password_digest
     * remember_token
-* Categories
+* **Categories**
     * id
     * title
-* Subcategories
+* **Subcategories**
     * id
     * title
-    + category_id    
+    * category_id        
 
 
 ## Instalación
