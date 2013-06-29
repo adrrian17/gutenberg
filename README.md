@@ -29,44 +29,44 @@
 
 ## Tablas
 
-* Books
+* **Books**
     * id (isbn)
     * title
     * published_date
     * pages
     * copies
-    + publishing_house_id
-    + category_id
-* Authors_Books
-* Books_Subcategories
-* Books_Users
-* Authors
+    * publishing_house_id
+    * category_id
+* **Authors_Books**
+* **Books_Subcategories**
+* **Books_Users**
+* **Authors**
     * id
     * first_name
     * last_name
     * nationality (?!)
     * born_date (?!)
-* Magazines
+* **Magazines**
     * id
     * title
     * volume
     * published_date
     * copies
-* Magazines_Users
-* Users
+* **Magazines_Users**
+* **Users**
     * id
     * first_name
     * last_name
     * email
     * password_digest
     * remember_token
-* Categories
+* **Categories**
     * id
     * title
-* Subcategories
+* **Subcategories**
     * id
     * title
-    + category_id    
+    * category_id        
 
 
 ## Instalación
