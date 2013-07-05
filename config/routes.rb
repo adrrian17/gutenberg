@@ -1,4 +1,16 @@
 Gutenberg::Application.routes.draw do
+  resources :categories
+
+  resources :subcategories
+
+  resources :users
+
+  resources :magazines
+
+  resources :authors
+
+  resources :books
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

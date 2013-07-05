@@ -30,7 +30,7 @@
 ## Tablas
 
 * **Books**
-    * id (isbn)
+    * book_id (isbn)
     * title
     * published_date
     * pages
@@ -41,31 +41,31 @@
 * **Books_Subcategories**
 * **Books_Users**
 * **Authors**
-    * id
+    * author_id
     * first_name
     * last_name
     * nationality (?!)
     * born_date (?!)
 * **Magazines**
-    * id
+    * magazine_id
     * title
     * volume
     * published_date
     * copies
 * **Magazines_Users**
 * **Users**
-    * id
+    * user_id
     * first_name
     * last_name
     * email
     * password_digest
     * remember_token
 * **Categories**
-    * id
-    * title
+    * category_id
+    * category
 * **Subcategories**
-    * id
-    * title
+    * subcategory_id
+    * subcategory
     * category_id        
 
 
