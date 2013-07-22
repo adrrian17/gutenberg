@@ -1,0 +1,20 @@
+source "https://rubygems.org"
+ruby '1.9.3'
+
+gem 'sinatra'
+gem 'thin'
+gem 'haml'
+gem 'data_mapper'
+gem 'sass'
+gem 'compass'
+gem 'heroku'
+
+group :production do
+    gem "pg"
+    gem "dm-postgres-adapter"
+end
+
+group :development, :test do
+    gem "sqlite3"
+    gem "dm-sqlite-adapter"
+end
