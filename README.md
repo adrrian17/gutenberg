@@ -118,9 +118,9 @@ TODO
 
 ## Autores
 
-* Uriel "**Nolaarma**" Molina ([@urielable](http://twitter.com/urielable))
-* Adrian "**Mostacho**" Ayala ([@adrrian17](http://twitter.com/adrrian17))
-* Daniel "**Sílaarma**" Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
+* Uriel **"Nolaarma"** Molina ([@urielable](http://twitter.com/urielable))
+* Adrian **"Mostacho"** Ayala ([@adrrian17](http://twitter.com/adrrian17))
+* Daniel **"Sílaarma"** Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
 
 ## Licencia
 
