@@ -11,6 +11,7 @@
 * **Usuario**: usuario de la aplicación. Puede ver libros y obtenerlos para un préstamo. Algunos usuarios pueden tener la capacidad de realizar tareas administrativas.
 * **Categoría**: es un contenedor lógico de propósito general, utilizado para organizar categorías más precisas. Ejemplos: Negocios, Política, Tecnología, Derecho.
 * **Subcategoría**: un contenedor lógico y específico. Ejemplos: Ciencia Ficción, Novela Romántica de Vampiros, etc...
+* **Préstamo**: representa el evento de un préstamo.
 
 
 ## Matriz de relaciones
@@ -66,7 +67,17 @@
 * **Subcategories**
     * subcategory_id
     * subcategory
-    * category_id        
+    * category_id
+* **ItemTypes**
+    * item_type_id
+    * item_type
+* **Loan**
+    * loan_id
+    * item_type_id
+    * item_id
+    * user_id
+    * timestamps
+    * returned_at
 
 
 ## Instalación
@@ -75,7 +86,7 @@
 
     $ rvm list
     
-    =* ruby-2.0.0-p195 [ x86_64 ]
+    =* ruby-2.0.0-p247 [ x86_64 ]
     
     
 #### Instalación de dependencias
@@ -98,17 +109,18 @@ Para crear e inicializar en un solo paso:
 
 #### Cómo ejecutar las pruebas
 
-    $ rake
+    $ rake [test]
 
 #### Deploy
 
+TODO
 
 
 ## Autores
 
-* Uriel Molina ([@urielable](http://twitter.com/urielable))
-* Adrian Ayala ([@adrrian17](http://twitter.com/adrrian17))
-* Daniel Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
+* Uriel "**Nolaarma**" Molina ([@urielable](http://twitter.com/urielable))
+* Adrian "**Mostacho**" Ayala ([@adrrian17](http://twitter.com/adrrian17))
+* Daniel "**Sílaarma**" Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
 
 ## Licencia
 
