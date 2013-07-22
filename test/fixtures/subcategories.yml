@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subcategory_id: 
+  subcategory: 
+  category_id: 
+
+two:
+  subcategory_id: 
+  subcategory: 
+  category_id: 

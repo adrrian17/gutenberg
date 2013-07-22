@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  magazine_id: 
+  title: 
+  volume: 
+  published_date: 2013-07-03 17:28:53
+  copies: 
+
+two:
+  magazine_id: 
+  title: 
+  volume: 
+  published_date: 2013-07-03 17:28:53
+  copies: 
