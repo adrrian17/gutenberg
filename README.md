@@ -66,10 +66,6 @@ Prestamo            |       |          |          |          |           |      
 * **Categories**
     * category_id
     * category
-* **Subcategories**
-    * subcategory_id
-    * subcategory
-    * category_id
 * **ItemTypes**
     * item_type_id
     * item_type
@@ -101,6 +97,23 @@ Prestamo            |       |          |          |          |           |      
 
     $ bundle exec rake db:migrate
 
+#### Instalación de devise
+
+Agregar le gema devise en el gemfile 
+
+    gem 'devise'
+
+Después de agregar al gemfile e instalar devise, utilizamos el siguiente generador:
+
+    $ rails generate devise:install
+
+Genera lo necesario para utilizar devise, pero hay que dar un vistazo al código generado.
+
+Despues de esto podemos integrarlo al modelo User:
+
+    $ rails generate devise Users
+
+
 #### Inicialización de base de datos
     
     $ bundle exec rake db:seed
@@ -120,9 +133,9 @@ TODO
 
 ## Autores
 
-* Uriel **"Nolaarma"** Molina ([@urielable](http://twitter.com/urielable))
+* Uriel **"Sílaarma"** Molina ([@urielable](http://twitter.com/urielable))
 * Adrian **"Mostacho"** Ayala ([@adrrian17](http://twitter.com/adrrian17))
-* Daniel **"Sílaarma"** Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
+* Daniel **"Nolaarma"** Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
 
 ## Licencia
 
