@@ -17,15 +17,17 @@
 ## Matriz de relaciones
 
 
- | Libro | Autor | Revista | Usuario | Editorial | Categoría | Subcategoría
-----|----|:----:|----|:----:|:----:|:----:|:----:|:----:
-**Libro** | | N - N | | N - N | N - 1 | N - 1 | N - N
-**Autor** | | | | | | |
-**Revista** | | | | N - N | | |
-**Usuario** | | | | | | |
-**Editorial** | | | | | | |
-**Categoría** | | | | | | | 1 - N
-**Subcategoría** | | | | | | |
+_                   | Libro |   Autor  | Revistas | Usuarios | Editorial | categoria |  tipos de recurso | prestamo   |
+                    | ----- | -------- | -------- | -------- | --------- | --------- |  ---------------- | ---------  |
+Libro               |   x   |   n-n    |          |          |    n-1    |   n-1     |       n-1         |    1-n     |   
+Autor               |       |    x     |          |          |           |           |                   |            |
+Revistas            |       |          |     x    |          |           |           |                   |    1-n     |
+Usuarios            |       |          |          |     x    |           |           |                   |    1-n     | 
+Editorial           |       |          |          |          |     x     |           |                   |            |
+Categoria           |       |          |          |          |           |     x     |                   |            |
+Tipos de Recurso    |       |          |          |          |           |           |         x         |    n-1     |
+Prestamo            |       |          |          |          |           |           |                   |      x     |
+
 
 
 ## Tablas
