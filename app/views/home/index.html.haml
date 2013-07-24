@@ -1,0 +1,140 @@
+.container
+  %h1.pull-left Libros
+  %button.btn.btn-success.pull-right Agregar libro
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Título
+        %th Páginas
+        %th Copias
+        %th Categoría
+        %th Prestamo
+        %th
+    %tbody
+      %tr
+        %td
+          %a{:href => '#'} Narnia 1
+        %td 300
+        %td 2
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td
+          %button.btn.btn-success{:type => "submit"} pedir prestado
+        %td
+          %a
+      %tr
+        %td
+          %a{:href => '#'} Narnia 2
+        %td 100
+        %td 1
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Daniel
+      %tr
+        %td
+          %a{:href => '#'} Narnia 3
+        %td 250
+        %td 4
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Adrian
+      %tr
+        %td
+          %a{:href => '#'} Narnia 4
+        %td 250
+        %td 4
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Adrian
+      %tr
+        %td
+          %a{:href => '#'} Narnia 5
+        %td 250
+        %td 4
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Adrian
+  .pagination.pagination-centered
+    %ul
+      %li.disabled
+        %a{:href => '#'} &laquo;
+      %li.active
+        %a{:href => '#'} 1
+      %li
+        %a{:href => '#'} 2
+      %li
+        %a{:href => '#'} 3
+      %li
+        %a{:href => '#'} &raquo;
+
+  %h1.pull-left Revistas
+  %button.btn.btn-success.pull-right Agregar revista
+  %table.table.table-hover
+    %thead
+      %tr
+        %th #
+        %th Título
+        %th Fecha de publicación
+        %th Copias
+        %th Categoría
+        %th Prestamo
+    %tbody
+      %tr
+        %td 1
+        %td
+          %a{:href => '#'} Lorem Ipsum
+        %td 10/07/2013
+        %td 2
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td
+          %a{:href => '#'} Pedir prestado
+      %tr
+        %td 2
+        %td
+          %a{:href => '#'} Lorem Ipsum
+        %td 10/07/2013
+        %td 1
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Daniel
+      %tr
+        %td 3
+        %td
+          %a{:href => '#'} Lorem Ipsum
+        %td 10/07/2013
+        %td 2
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Adrian
+      %tr
+        %td 3
+        %td
+          %a{:href => '#'} Lorem Ipsum
+        %td 10/07/2013
+        %td 4
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Adrian
+      %tr
+        %td 3
+        %td
+          %a{:href => '#'} Lorem Ipsum
+        %td 10/07/2013
+        %td 3
+        %td
+          %a{:href => '#'} Ciencia ficción
+        %td Adrian
+  .pagination.pagination-centered
+    %ul
+      %li.disabled
+        %a{:href => '#'} &laquo;
+      %li.active
+        %a{:href => '#'} 1
+      %li
+        %a{:href => '#'} 2
+      %li
+        %a{:href => '#'} 3
+      %li
+        %a{:href => '#'} &raquo;
+  %hr/
