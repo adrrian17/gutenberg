@@ -1,4 +1,5 @@
 Gutenberg::Application.routes.draw do
+  devise_for :users
   get '/home', to: 'home#index'
 
   resources :categories
