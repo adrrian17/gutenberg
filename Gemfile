@@ -26,6 +26,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'devise'
+
 group :development do
   gem 'erb2haml', '0.1.5'
   gem "html2haml", "~> 1.0.1"
