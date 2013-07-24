@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Magazine:
+  = @magazine.magazine_id
+%p
+  %strong Title:
+  = @magazine.title
+%p
+  %strong Volume:
+  = @magazine.volume
+%p
+  %strong Published date:
+  = @magazine.published_date
+%p
+  %strong Copies:
+  = @magazine.copies
+= link_to 'Edit', edit_magazine_path(@magazine)
+|
+\#{link_to 'Back', magazines_path}

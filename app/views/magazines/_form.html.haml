@@ -1,0 +1,31 @@
+= form_for(@magazine) do |f|
+  - if @magazine.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@magazine.errors.count, "error")
+        prohibited this magazine from being saved:
+      %ul
+        - @magazine.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :magazine_id
+    %br/
+    = f.text_field :magazine_id
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :volume
+    %br/
+    = f.text_field :volume
+  .field
+    = f.label :published_date
+    %br/
+    = f.datetime_select :published_date
+  .field
+    = f.label :copies
+    %br/
+    = f.text_field :copies
+  .actions
+    = f.submit

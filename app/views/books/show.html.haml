@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Book:
+  = @book.book_id
+%p
+  %strong Title:
+  = @book.title
+%p
+  %strong Published date:
+  = @book.published_date
+%p
+  %strong Pages:
+  = @book.pages
+%p
+  %strong Copies:
+  = @book.copies
+%p
+  %strong Publishing house:
+  = @book.publishing_house_id
+%p
+  %strong Category:
+  = @book.category_id
+= link_to 'Edit', edit_book_path(@book)
+|
+\#{link_to 'Back', books_path}

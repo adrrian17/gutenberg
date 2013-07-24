@@ -1,0 +1,39 @@
+= form_for(@book) do |f|
+  - if @book.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@book.errors.count, "error")
+        prohibited this book from being saved:
+      %ul
+        - @book.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :book_id
+    %br/
+    = f.text_field :book_id
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :published_date
+    %br/
+    = f.time_select :published_date
+  .field
+    = f.label :pages
+    %br/
+    = f.text_field :pages
+  .field
+    = f.label :copies
+    %br/
+    = f.text_field :copies
+  .field
+    = f.label :publishing_house_id
+    %br/
+    = f.text_field :publishing_house_id
+  .field
+    = f.label :category_id
+    %br/
+    = f.text_field :category_id
+  .actions
+    = f.submit
