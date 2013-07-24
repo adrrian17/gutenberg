@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'erb2haml', '0.1.5'
   gem "html2haml", "~> 1.0.1"
+  gem 'bootstrap-sass', '2.3.2.1'
 end
 
 group :assets do
