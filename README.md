@@ -10,19 +10,18 @@
 * **Revista**: colección de artículos relacionados por un tema general.
 * **Usuario**: usuario de la aplicación. Puede ver libros y obtenerlos para un préstamo. Algunos usuarios pueden tener la capacidad de realizar tareas administrativas.
 * **Categoría**: es un contenedor lógico de propósito general, utilizado para organizar categorías más precisas. Ejemplos: Negocios, Política, Tecnología, Derecho.
-* **Subcategoría**: un contenedor lógico y específico. Ejemplos: Ciencia Ficción, Novela Romántica de Vampiros, etc...
 * **Préstamo**: representa el evento de un préstamo.
 
 
 ## Matriz de relaciones
 
 
- | Libro | Autor | Revistas | Usuarios | Editorial | categoria | Tipos de recurso | Prestamo 
+ | Libro | Autor | Revistas | Usuarios | Editorial | categoria | Tipos de recurso | Prestamo
 ----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
-Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |   
+Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |
 Autor               |       |    -     |          |          |           |           |                   |            |
 Revistas            |       |          |     -    |          |           |           |                   |    1-N     |
-Usuarios            |       |          |          |     -    |           |           |                   |    1-N     | 
+Usuarios            |       |          |          |     -    |           |           |                   |    1-N     |
 Editorial           |       |          |          |          |     -     |           |                   |            |
 Categoria           |       |          |          |          |           |     -     |                   |            |
 Tipos de recurso    |       |          |          |          |           |           |         -         |    N-1     |
@@ -41,7 +40,6 @@ Prestamo            |       |          |          |          |           |      
     * publishing_house_id
     * category_id
 * **Authors_Books**
-* **Books_Subcategories**
 * **Books_Users**
 * **Authors**
     * author_id
@@ -83,12 +81,12 @@ Prestamo            |       |          |          |          |           |      
 #### Versión de Ruby
 
     $ rvm list
-    
+
     =* ruby-2.0.0-p247 [ x86_64 ]
-    
-    
+
+
 #### Instalación de dependencias
-    
+
     $ bundle install
 
 #### Configuración
@@ -99,7 +97,7 @@ Prestamo            |       |          |          |          |           |      
 
 #### Instalación de devise
 
-Agregar le gema devise en el gemfile 
+Agregar le gema devise en el gemfile
 
     gem 'devise'
 
@@ -115,9 +113,9 @@ Despues de esto podemos integrarlo al modelo User:
 
 
 #### Inicialización de base de datos
-    
+
     $ bundle exec rake db:seed
-    
+
 Para crear e inicializar en un solo paso:
 
     $ bundle exec rake db:setup
