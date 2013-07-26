@@ -17,16 +17,16 @@
 ## Matriz de relaciones
 
 
-_                   | Libro |   Autor  | Revistas | Usuarios | Editorial | categoria |  tipos de recurso | prestamo   |
-                    | ----- | -------- | -------- | -------- | --------- | --------- |  ---------------- | ---------  |
-Libro               |   x   |   n-n    |          |          |    n-1    |   n-1     |       n-1         |    1-n     |   
-Autor               |       |    x     |          |          |           |           |                   |            |
-Revistas            |       |          |     x    |          |           |           |                   |    1-n     |
-Usuarios            |       |          |          |     x    |           |           |                   |    1-n     | 
-Editorial           |       |          |          |          |     x     |           |                   |            |
-Categoria           |       |          |          |          |           |     x     |                   |            |
-Tipos de Recurso    |       |          |          |          |           |           |         x         |    n-1     |
-Prestamo            |       |          |          |          |           |           |                   |      x     |
+ | Libro | Autor | Revistas | Usuarios | Editorial | categoria | Tipos de recurso | Prestamo 
+----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
+Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |   
+Autor               |       |    -     |          |          |           |           |                   |            |
+Revistas            |       |          |     -    |          |           |           |                   |    1-N     |
+Usuarios            |       |          |          |     -    |           |           |                   |    1-N     | 
+Editorial           |       |          |          |          |     -     |           |                   |            |
+Categoria           |       |          |          |          |           |     -     |                   |            |
+Tipos de recurso    |       |          |          |          |           |           |         -         |    N-1     |
+Prestamo            |       |          |          |          |           |           |                   |      -     |
 
 
 
@@ -94,7 +94,7 @@ Prestamo            |       |          |          |          |           |      
 #### Configuración
 
 #### Creación de base de datos
-
+    $ bundle exec rake db:create
     $ bundle exec rake db:migrate
 
 #### Instalación de devise
