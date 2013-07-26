@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "config/variables";
+@import "home";
 
 body {
   padding-top: 60px + $viewMarginTop;
@@ -7,7 +8,7 @@ body {
 
 .align-center {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
