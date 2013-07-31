@@ -148,18 +148,11 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (= 2.3.2.1)
-<<<<<<< HEAD
   coffee-rails
+  devise
   erb2haml
   haml
   html2haml
-=======
-  coffee-rails (~> 4.0.0)
-  devise
-  erb2haml (= 0.1.5)
-  haml (~> 4.0.3)
-  html2haml (~> 1.0.1)
->>>>>>> 727b040a6b693aaa2298f45c4be157e08f936fb1
   jbuilder (~> 1.2)
   jquery-rails
   mocha
