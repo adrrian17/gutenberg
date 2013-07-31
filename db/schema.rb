@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724174804) do
+ActiveRecord::Schema.define(version: 20130731213746) do
 
   create_table "authors", force: true do |t|
     t.integer  "author_id"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 20130724174804) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "loans", force: true do |t|
+    t.integer  "loan_id"
+    t.integer  "item_type_id"
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "returned_at"
   end
 
   create_table "magazines", force: true do |t|

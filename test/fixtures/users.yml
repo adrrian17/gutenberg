@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  user_id: 
-  firs_name: 
-  last_name: 
-  email: MyString
+ana:
+  user_id: 1
+  first_name: Ana
+  last_name: Foo
+  email: ana@mail.com
 
-two:
-  user_id: 
-  firs_name: 
-  last_name: 
-  email: MyString
+karen:
+  user_id: 2
+  first_name: Karen
+  last_name: Bar
+  email: karen@mail.com
