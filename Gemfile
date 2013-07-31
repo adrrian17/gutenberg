@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '2.3.2.1', group: [:development, :test]
+gem 'devise'
 
 group :development do
   gem 'erb2haml'

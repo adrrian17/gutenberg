@@ -10,22 +10,23 @@
 * **Revista**: colección de artículos relacionados por un tema general.
 * **Usuario**: usuario de la aplicación. Puede ver libros y obtenerlos para un préstamo. Algunos usuarios pueden tener la capacidad de realizar tareas administrativas.
 * **Categoría**: es un contenedor lógico de propósito general, utilizado para organizar categorías más precisas. Ejemplos: Negocios, Política, Tecnología, Derecho.
-* **Subcategoría**: un contenedor lógico y específico. Ejemplos: Ciencia Ficción, Novela Romántica de Vampiros, etc...
 * **Préstamo**: representa el evento de un préstamo.
 
 
 ## Matriz de relaciones
 
 
- | Libro | Autor | Revista | Usuario | Editorial | Categoría | Subcategoría
-----|----|:----:|----|:----:|:----:|:----:|:----:|:----:
-**Libro** | | N - N | | N - N | N - 1 | N - 1 | N - N
-**Autor** | | | | | | |
-**Revista** | | | | N - N | | |
-**Usuario** | | | | | | |
-**Editorial** | | | | | | |
-**Categoría** | | | | | | | 1 - N
-**Subcategoría** | | | | | | |
+ | Libro | Autor | Revistas | Usuarios | Editorial | categoria | Tipos de recurso | Prestamo
+----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
+Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |
+Autor               |       |    -     |          |          |           |           |                   |            |
+Revistas            |       |          |     -    |          |           |           |                   |    1-N     |
+Usuarios            |       |          |          |     -    |           |           |                   |    1-N     |
+Editorial           |       |          |          |          |     -     |           |                   |            |
+Categoria           |       |          |          |          |           |     -     |                   |            |
+Tipos de recurso    |       |          |          |          |           |           |         -         |    N-1     |
+Prestamo            |       |          |          |          |           |           |                   |      -     |
+
 
 
 ## Tablas
@@ -39,7 +40,6 @@
     * publishing_house_id
     * category_id
 * **Authors_Books**
-* **Books_Subcategories**
 * **Books_Users**
 * **Authors**
     * author_id
@@ -64,10 +64,6 @@
 * **Categories**
     * category_id
     * category
-* **Subcategories**
-    * subcategory_id
-    * subcategory
-    * category_id
 * **ItemTypes**
     * item_type_id
     * item_type
@@ -85,24 +81,41 @@
 #### Versión de Ruby
 
     $ rvm list
-    
+
     =* ruby-2.0.0-p247 [ x86_64 ]
-    
-    
+
+
 #### Instalación de dependencias
-    
+
     $ bundle install
 
 #### Configuración
 
 #### Creación de base de datos
-
+    $ bundle exec rake db:create
     $ bundle exec rake db:migrate
 
+#### Instalación de devise
+
+Agregar le gema devise en el gemfile
+
+    gem 'devise'
+
+Después de agregar al gemfile e instalar devise, utilizamos el siguiente generador:
+
+    $ rails generate devise:install
+
+Genera lo necesario para utilizar devise, pero hay que dar un vistazo al código generado.
+
+Despues de esto podemos integrarlo al modelo User:
+
+    $ rails generate devise Users
+
+
 #### Inicialización de base de datos
-    
+
     $ bundle exec rake db:seed
-    
+
 Para crear e inicializar en un solo paso:
 
     $ bundle exec rake db:setup
@@ -118,9 +131,9 @@ TODO
 
 ## Autores
 
-* Uriel **"Nolaarma"** Molina ([@urielable](http://twitter.com/urielable))
+* Uriel **"Sílaarma"** Molina ([@urielable](http://twitter.com/urielable))
 * Adrian **"Mostacho"** Ayala ([@adrrian17](http://twitter.com/adrrian17))
-* Daniel **"Sílaarma"** Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
+* Daniel **"Nolaarma"** Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
 
 ## Licencia
 
