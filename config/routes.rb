@@ -1,5 +1,5 @@
 Gutenberg::Application.routes.draw do
-  devise_for :users
+  devise_for :users unless Rails.env.test?
   get '/home', to: 'home#index'
 
   resources :categories
