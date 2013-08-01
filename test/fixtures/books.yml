@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  book_id: 
-  title: 
+xkcd:
+  book_id: 1
+  title: "XKCD: the full collection"
   published_date: 2013-07-03 17:18:44
-  pages: 
-  copies: 
-  publishing_house_id: MyString
-  category_id: MyString
+  pages: 200
+  copies: 2
+  publishing_house_id: 1
+  category_id: 1
 
-two:
-  book_id: 
-  title: 
+hunger_games:
+  book_id: 2
+  title: "The Hunger Games"
   published_date: 2013-07-03 17:18:44
-  pages: 
-  copies: 
-  publishing_house_id: MyString
-  category_id: MyString
+  pages: 300
+  copies: 3
+  publishing_house_id: 1
+  category_id: 1

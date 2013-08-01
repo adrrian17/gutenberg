@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BooksControllerTest < ActionController::TestCase
   setup do
-    @book = books(:one)
+    @book = books(:xkcd)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class BooksControllerTest < ActionController::TestCase
 
   test "should create book" do
     assert_difference('Book.count') do
-      post :create, book: { book_id: @book.book_id, category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: @book.title }
+      post :create, book: { book_id: @book.book_id, category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: "#{@book.title} II" }
     end
 
     assert_redirected_to book_path(assigns(:book))
