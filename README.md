@@ -2,6 +2,7 @@
 
 **Gutenberg** es una pequeña biblioteca. Administra préstamos de libros y revistas, así como los propios libros y revistas.
 
+[![Build Status](https://travis-ci.org/edmt/gutenberg.png?branch=master)](https://travis-ci.org/edmt/gutenberg)
 
 ## Lista de recursos
 
@@ -131,9 +132,9 @@ TODO
 
 ## Autores
 
-* Uriel **"Sílaarma"** Molina ([@urielable](http://twitter.com/urielable))
+* Uriel **"Able"** Molina ([@urielable](http://twitter.com/urielable))
 * Adrian **"Mostacho"** Ayala ([@adrrian17](http://twitter.com/adrrian17))
-* Daniel **"Nolaarma"** Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
+* Daniel Martínez ([@dtumbolia](http://twitter.com/dtumbolia))
 
 ## Licencia
 
