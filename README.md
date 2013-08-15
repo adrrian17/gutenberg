@@ -23,7 +23,7 @@
 Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |
 Autor               |       |    -     |          |          |           |           |                   |            |
 Revistas            |       |          |     -    |          |           |           |                   |    1-N     |
-Usuarios            |       |          |          |     -    |           |           |                   |    1-N     |
+Usuarios            |       |          |          |     -    |           |           |       N-1         |    1-N     |
 Editorial           |       |          |          |          |     -     |           |                   |            |
 Categoria           |       |          |          |          |           |     -     |                   |            |
 Tipos de recurso    |       |          |          |          |           |           |         -         |    N-1     |
