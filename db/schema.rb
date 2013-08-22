@@ -11,14 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819222439) do
+ActiveRecord::Schema.define(version: 20130822171343) do
 
   create_table "authors", force: true do |t|
     t.integer  "author_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "country_id"
-    t.datetime "born_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,13 +41,6 @@ ActiveRecord::Schema.define(version: 20130819222439) do
     t.integer  "item_types_id"
   end
 
-  create_table "books_categories", force: true do |t|
-    t.integer  "book_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "books_users", force: true do |t|
     t.string   "book_id"
     t.integer  "User_id"
@@ -60,6 +51,13 @@ ActiveRecord::Schema.define(version: 20130819222439) do
   create_table "categories", force: true do |t|
     t.integer  "category_id"
     t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "item_types", force: true do |t|
+    t.integer  "item_type_id"
+    t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,13 +81,7 @@ ActiveRecord::Schema.define(version: 20130819222439) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_types_id"
-  end
-
-  create_table "magazines_categories", force: true do |t|
-    t.integer  "magazine_id"
     t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "magazines_users", force: true do |t|
