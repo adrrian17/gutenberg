@@ -18,11 +18,11 @@
 ## Matriz de relaciones
 
 
- | Libro | Autor | Revistas | Usuarios | Editorial | categoria | Tipos de recurso | Prestamo
+ | Libro | Autor | Revistas | Usuarios | Editorial | Categoria | Tipos de recurso | Préstamo
 ----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
 Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |
 Autor               |       |    -     |          |          |           |           |                   |            |
-Revistas            |       |          |     -    |          |           |           |                   |    1-N     |
+Revistas            |       |          |     -    |          |           |   N-1     |                   |    1-N     |
 Usuarios            |       |          |          |     -    |           |           |       N-1         |    1-N     |
 Editorial           |       |          |          |          |     -     |           |                   |            |
 Categoria           |       |          |          |          |           |     -     |                   |            |
@@ -41,21 +41,31 @@ Prestamo            |       |          |          |          |           |      
     * copies
     * publishing_house_id
     * category_id
+    * timestamps
 * **Authors_Books**
+    * author_id
+    * book_id
+    * timestamps
 * **Books_Users**
+    * book_id
+    * user_id
+    * timestamps
 * **Authors**
     * author_id
     * first_name
     * last_name
-    * nationality (?!)
-    * born_date (?!)
+    * timestamps
 * **Magazines**
     * magazine_id
     * title
     * volume
     * published_date
     * copies
+    * timestamps
 * **Magazines_Users**
+    * magazine_id
+    * user_id
+    * timestamps
 * **Users**
     * user_id
     * first_name
@@ -63,19 +73,22 @@ Prestamo            |       |          |          |          |           |      
     * email
     * password_digest
     * remember_token
+    * timestamps
 * **Categories**
     * category_id
     * category
+    * timestamps
 * **ItemTypes**
     * item_type_id
     * item_type
+    * timestamps
 * **Loan**
     * loan_id
     * item_type_id
     * item_id
     * user_id
-    * timestamps
     * returned_at
+    * timestamps
 
 
 ## Instalación
