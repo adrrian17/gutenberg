@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823174153) do
+ActiveRecord::Schema.define(version: 20130823185454) do
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20130823174153) do
     t.datetime "updated_at"
   end
 
-  create_table "authors_books", force: true do |t|
+  create_table "authors_books", id: false, force: true do |t|
     t.integer  "author_id"
     t.string   "book_id"
     t.datetime "created_at"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20130823174153) do
     t.integer  "item_types_id"
   end
 
-  create_table "books_users", force: true do |t|
+  create_table "books_users", id: false, force: true do |t|
     t.string   "book_id"
     t.integer  "User_id"
     t.datetime "created_at"
@@ -79,9 +79,15 @@ ActiveRecord::Schema.define(version: 20130823174153) do
     t.integer  "category_id"
   end
 
-  create_table "magazines_users", force: true do |t|
+  create_table "magazines_users", id: false, force: true do |t|
     t.integer  "magazine_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "publishing_houses", force: true do |t|
+    t.string   "publishing_house"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
