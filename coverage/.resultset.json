@@ -153,7 +153,15 @@
         1,
         1,
         1,
+        null,
         1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/test/models/books_users_test.rb": [
@@ -466,6 +474,6 @@
         null
       ]
     },
-    "timestamp": 1377222095
+    "timestamp": 1377293888
   }
 }

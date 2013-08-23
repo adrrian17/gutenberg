@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  author_id:
-  first_name:
-  last_name:
+  first_name: John
+  last_name: Smith
 
 two:
-  author_id:
   first_name:
   last_name:

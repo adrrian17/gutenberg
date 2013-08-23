@@ -10,7 +10,6 @@
   %tbody
     - @categories.each do |category|
       %tr
-        %td= category.category_id
         %td= category.category
         %td= link_to 'Show', category
         %td= link_to 'Edit', edit_category_path(category)

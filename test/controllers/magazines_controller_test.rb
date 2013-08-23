@@ -18,7 +18,7 @@ class MagazinesControllerTest < ActionController::TestCase
 
   test "should create magazine" do
     assert_difference('Magazine.count') do
-      post :create, magazine: { copies: @magazine.copies, magazine_id: @magazine.magazine_id, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume }
+      post :create, magazine: { copies: @magazine.copies, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume }
     end
 
     assert_redirected_to magazine_path(assigns(:magazine))
@@ -35,7 +35,7 @@ class MagazinesControllerTest < ActionController::TestCase
   end
 
   test "should update magazine" do
-    patch :update, id: @magazine, magazine: { copies: @magazine.copies, magazine_id: @magazine.magazine_id, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume }
+    patch :update, id: @magazine, magazine: { copies: @magazine.copies, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume }
     assert_redirected_to magazine_path(assigns(:magazine))
   end
 
