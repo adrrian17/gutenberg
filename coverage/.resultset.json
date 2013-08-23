@@ -4,6 +4,10 @@
       "/Users/adrian 1/ruby/gutenberg/app/models/author.rb": [
         1,
         1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/models/book.rb": [
@@ -23,6 +27,8 @@
       "/Users/adrian 1/ruby/gutenberg/app/models/category.rb": [
         1,
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -460,6 +466,6 @@
         null
       ]
     },
-    "timestamp": 1377194391
+    "timestamp": 1377222095
   }
 }
