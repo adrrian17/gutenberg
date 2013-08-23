@@ -4,8 +4,6 @@ Gutenberg::Application.routes.draw do
 
   resources :categories
 
-  resources :subcategories
-
   resources :users
 
   resources :magazines
