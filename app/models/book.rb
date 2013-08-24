@@ -5,7 +5,7 @@ class Book < ActiveRecord::Base
   validates :title, uniqueness: { scope: [:publishing_house_id, :category_id] }
 
   has_many :loans, foreign_key: :item_id
-  has_many :authors, through: :books_authors
+  has_and_belongs_to_many :authors
   belongs_to :category
   belongs_to :item_types
   belongs_to :publishing_house
