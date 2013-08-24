@@ -45,6 +45,8 @@
         1,
         1,
         1,
+        null,
+        1,
         null
       ],
       "/Users/administrator/rails-projects/gutenberg/app/models/user.rb": [
@@ -186,6 +188,11 @@
         1,
         1,
         1,
+        null,
+        1,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/administrator/rails-projects/gutenberg/test/models/magazines_users_test.rb": [
@@ -391,6 +398,7 @@
         0,
         null,
         null,
+        null,
         0,
         null,
         null,
@@ -471,6 +479,6 @@
         null
       ]
     },
-    "timestamp": 1377364547
+    "timestamp": 1377365651
   }
 }
