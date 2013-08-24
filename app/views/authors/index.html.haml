@@ -13,7 +13,6 @@
   %tbody
     - @authors.each do |author|
       %tr
-        %td= author.author_id
         %td= author.first_name
         %td= author.last_name
         %td= link_to 'Show', author

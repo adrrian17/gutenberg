@@ -1,14 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  magazine_id: 1
   title: Strange Days
   volume: Q1
   published_date: 2013-07-03 17:28:53
   copies: 2
 
 two:
-  magazine_id: 2
   title: Weird People
   volume: Q2
   published_date: 2013-07-03 17:28:53
