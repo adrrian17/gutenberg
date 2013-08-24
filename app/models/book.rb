@@ -9,4 +9,6 @@ class Book < ActiveRecord::Base
   belongs_to :category
   belongs_to :item_types
   belongs_to :publishing_house
+
+  before_save { |book| book.item_types_id = 0 }
 end

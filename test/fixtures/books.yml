@@ -7,6 +7,7 @@ xkcd:
   copies: 2
   publishing_house_id: 1
   category_id: 1
+  item_types_id: 0
 
 hunger_games:
   title: "The Hunger Games"
@@ -15,3 +16,4 @@ hunger_games:
   copies: 3
   publishing_house_id: 1
   category_id: 1
+  item_types_id: 0

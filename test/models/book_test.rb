@@ -21,4 +21,9 @@ class BookTest < ActiveSupport::TestCase
 
     assert_equal 1, book.authors.size
   end
+
+  def test_should_have_item_types_id_set_to_zero
+    @book = books(:xkcd)
+    assert_equal 0, @book.item_types_id
+  end
 end
