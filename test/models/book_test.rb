@@ -13,7 +13,7 @@ class BookTest < ActiveSupport::TestCase
   should belong_to(:item_types)
   should have_many(:loans)
 
-  def test_should_have_many_and_belongs_to
+  test "should have many and belongs to" do
     book = books(:xkcd)
     author = authors(:one)
 
@@ -22,7 +22,7 @@ class BookTest < ActiveSupport::TestCase
     assert_equal 1, book.authors.size
   end
 
-  def test_should_have_item_types_id_set_to_zero
+  test "should have item types id set to zero" do
     @book = books(:xkcd)
     assert_equal 0, @book.item_types_id
   end
