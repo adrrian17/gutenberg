@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PublishingHousesControllerTest < ActionController::TestCase
   setup do
-    @publishing_house = publishing_houses(:one)
+    @publishing_house = publishing_houses(:DeBolsillo)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class PublishingHousesControllerTest < ActionController::TestCase
 
   test "should create publishing_house" do
     assert_difference('PublishingHouse.count') do
-      post :create, publishing_house: {  }
+      post :create, publishing_house: { publishing_house: "#{@publishing_house.publishing_house} II" }
     end
 
     assert_redirected_to publishing_house_path(assigns(:publishing_house))
@@ -35,7 +35,7 @@ class PublishingHousesControllerTest < ActionController::TestCase
   end
 
   test "should update publishing_house" do
-    patch :update, id: @publishing_house, publishing_house: {  }
+    patch :update, id: @publishing_house, publishing_house: { publishing_house: @publishing_house.publishing_house }
     assert_redirected_to publishing_house_path(assigns(:publishing_house))
   end
 

@@ -69,6 +69,6 @@ class PublishingHousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publishing_house_params
-      params[:publishing_house]
+      params.require(:publishing_house).permit(:publishing_house)
     end
 end
