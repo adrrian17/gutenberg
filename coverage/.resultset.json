@@ -41,6 +41,8 @@
         1,
         1,
         1,
+        null,
+        1,
         1,
         1,
         null
@@ -49,7 +51,7 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         1,
         null,
@@ -184,6 +186,7 @@
       "/Users/adrian 1/ruby/gutenberg/test/models/magazine_test.rb": [
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -474,6 +477,6 @@
         null
       ]
     },
-    "timestamp": 1377293888
+    "timestamp": 1377556097
   }
 }
