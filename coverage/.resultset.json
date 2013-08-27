@@ -1,4 +1,4 @@
-{
+ {
   "Unit Tests": {
     "coverage": {
       "/Users/adrian 1/ruby/gutenberg/app/models/author.rb": [
@@ -30,6 +30,7 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/models/loan.rb": [
@@ -50,13 +51,15 @@
       "/Users/adrian 1/ruby/gutenberg/app/models/publishing_house.rb": [
         1,
         1,
+        null,
+        1,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/models/user.rb": [
         1,
         1,
         1,
-        1,
+        null,
         null,
         1,
         null,
@@ -69,6 +72,18 @@
       ],
       "/Users/adrian 1/ruby/gutenberg/app/helpers/application_helper.rb": [
         1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/helpers/authors_helper.rb": [
@@ -539,6 +554,6 @@
         null
       ]
     },
-    "timestamp": 1377537769
+    "timestamp": 1377615237
   }
 }
