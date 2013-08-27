@@ -1,4 +1,4 @@
- {
+{
   "Unit Tests": {
     "coverage": {
       "/Users/adrian 1/ruby/gutenberg/app/models/author.rb": [
@@ -59,7 +59,7 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         1,
         null,
@@ -554,6 +554,6 @@
         null
       ]
     },
-    "timestamp": 1377615237
+    "timestamp": 1377617137
   }
 }
