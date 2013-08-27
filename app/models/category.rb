@@ -3,4 +3,5 @@ class Category < ActiveRecord::Base
   validates :category, presence: true
 
   has_many :books
+  has_many :magazines
 end
