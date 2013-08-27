@@ -47,6 +47,11 @@
         1,
         null
       ],
+      "/Users/adrian 1/ruby/gutenberg/app/models/publishing_house.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/adrian 1/ruby/gutenberg/app/models/user.rb": [
         1,
         1,
@@ -64,18 +69,6 @@
       ],
       "/Users/adrian 1/ruby/gutenberg/app/helpers/application_helper.rb": [
         1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/helpers/authors_helper.rb": [
@@ -91,6 +84,10 @@
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/helpers/magazines_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/publishing_houses_helper.rb": [
         1,
         null
       ],
@@ -111,6 +108,12 @@
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/test/helpers/magazines_helper_test.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/test/helpers/publishing_houses_helper_test.rb": [
         1,
         null,
         1,
@@ -203,6 +206,14 @@
         null,
         null,
         null,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/test/models/publishing_house_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/test/models/user_test.rb": [
@@ -424,6 +435,57 @@
         null,
         null
       ],
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/publishing_houses_controller_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
       "/Users/adrian 1/ruby/gutenberg/test/controllers/users_controller_test.rb": [
         1,
         null,
@@ -477,6 +539,6 @@
         null
       ]
     },
-    "timestamp": 1377556097
+    "timestamp": 1377537769
   }
 }
