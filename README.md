@@ -34,7 +34,6 @@ Prestamo            |       |          |          |          |           |      
 ## Tablas
 
 * **Books**
-    * book_id (isbn)
     * title
     * published_date
     * pages
@@ -43,20 +42,16 @@ Prestamo            |       |          |          |          |           |      
     * category_id
     * timestamps
 * **Authors_Books**
-    * author_id
     * book_id
     * timestamps
 * **Books_Users**
-    * book_id
     * user_id
     * timestamps
 * **Authors**
-    * author_id
     * first_name
     * last_name
     * timestamps
 * **Magazines**
-    * magazine_id
     * title
     * volume
     * published_date
@@ -67,7 +62,6 @@ Prestamo            |       |          |          |          |           |      
     * user_id
     * timestamps
 * **Users**
-    * user_id
     * first_name
     * last_name
     * email
@@ -75,19 +69,19 @@ Prestamo            |       |          |          |          |           |      
     * remember_token
     * timestamps
 * **Categories**
-    * category_id
     * category
     * timestamps
 * **ItemTypes**
-    * item_type_id
     * item_type
     * timestamps
 * **Loan**
-    * loan_id
     * item_type_id
     * item_id
     * user_id
     * returned_at
+    * timestamps
+* **Publishing Houses**
+    * publishing_house
     * timestamps
 
 

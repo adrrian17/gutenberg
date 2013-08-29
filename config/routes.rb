@@ -1,4 +1,6 @@
 Gutenberg::Application.routes.draw do
+  resources :publishing_houses
+
   devise_for :users unless Rails.env.test?
   get '/home', to: 'home#index'
 
