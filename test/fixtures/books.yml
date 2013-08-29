@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 xkcd:
+  id: 1
   title: "XKCD: the full collection"
   published_date: 2013-07-03 17:18:44
   pages: 200
@@ -9,9 +10,10 @@ xkcd:
   category_id: 1
 
 hunger_games:
+  id: 2
   title: "The Hunger Games"
   published_date: 2013-07-03 17:18:44
   pages: 300
   copies: 3
   publishing_house_id: 1
-  category_id: 1
+  category_id: 2
