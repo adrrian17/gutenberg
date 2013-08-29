@@ -1,3 +1,4 @@
+
 require 'test_helper'
 
 class LoanTest < ActiveSupport::TestCase
@@ -46,7 +47,7 @@ class LoanTest < ActiveSupport::TestCase
     assert @delayed.penalty > 0
   end
   
-  test "should decrement available copies" do    
+  test "should decrement available copies" do
     @book = books(:xkcd)
     @user = users(:ana)
     assert_difference('Book.find(@book.id).copies', -1) do
@@ -55,6 +56,9 @@ class LoanTest < ActiveSupport::TestCase
   end
 
   test "should restrict the loan according to stock" do
-    flunk 'TODO'
+    @unavailable = books(:unavailable)
+    @user = users(:ana)
+    @loan = Loan.new({user_id: @user.id, item_id:@unavailable.id, item_type_id:@unavailable.item_types_id})
+    refute @loan.save
   end
 end

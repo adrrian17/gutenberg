@@ -8,11 +8,9 @@ class Loan < ActiveRecord::Base
   PENALTY_PER_DAY = 5.00
 
   before_save do |loan|
-    if loan.item_type_id.zero?
-      book = Book.find(loan.item_type_id)
-      book.copies -= 1
-      book.save
-    end
+    item = loan.solicited_item
+    item.copies -= 1
+    item.save
   end
 
   def in_time?
@@ -29,6 +27,18 @@ class Loan < ActiveRecord::Base
 
   def penalty
     PENALTY_PER_DAY * delayed_days
+  end
+
+  def solicited_item
+    if self.item_type_id == 0
+      Book.find(self.item_id)
+    elsif self.item_type_id == 1
+      Magazine.find(self.item_id)
+    end
+  end
+
+  def save
+    super if self.solicited_item.copies > 0
   end
 
   private
