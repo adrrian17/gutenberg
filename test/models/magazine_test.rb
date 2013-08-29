@@ -9,4 +9,9 @@ class MagazineTest < ActiveSupport::TestCase
   should belong_to(:category)
   should belong_to(:item_types)
   should have_many(:loans)
+
+  test "should have item types id set to one" do
+    @magazine = magazines(:one)
+    assert_equal 1, @magazine.item_types_id
+  end  
 end
