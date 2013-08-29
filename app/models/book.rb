@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   validates :title, :published_date, :pages, :copies, presence: true
-  validates :pages, numericality: { only_integer: true }
-  validates :copies, numericality: { only_integer: true }
+  validates :pages, numericality: { only_integer: true, greater_than: 0 }
+  validates :copies, numericality: { only_integer: true, greater_than: 0 }
   validates :title, uniqueness: { scope: [:publishing_house_id, :category_id] }
 
   has_many :loans, foreign_key: :item_id
