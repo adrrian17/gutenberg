@@ -11,19 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130815175924) do
+ActiveRecord::Schema.define(version: 20130823185454) do
 
   create_table "authors", force: true do |t|
-    t.integer  "author_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "country_id"
-    t.datetime "born_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "authors_books", force: true do |t|
+  create_table "authors_books", id: false, force: true do |t|
     t.integer  "author_id"
     t.string   "book_id"
     t.datetime "created_at"
@@ -31,7 +28,6 @@ ActiveRecord::Schema.define(version: 20130815175924) do
   end
 
   create_table "books", force: true do |t|
-    t.string   "book_id"
     t.string   "title"
     t.time     "published_date"
     t.integer  "pages"
@@ -43,14 +39,7 @@ ActiveRecord::Schema.define(version: 20130815175924) do
     t.integer  "item_types_id"
   end
 
-  create_table "books_subcategories", force: true do |t|
-    t.string   "book_id"
-    t.integer  "Subcategory_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "books_users", force: true do |t|
+  create_table "books_users", id: false, force: true do |t|
     t.string   "book_id"
     t.integer  "User_id"
     t.datetime "created_at"
@@ -58,14 +47,18 @@ ActiveRecord::Schema.define(version: 20130815175924) do
   end
 
   create_table "categories", force: true do |t|
-    t.integer  "category_id"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "item_types", force: true do |t|
+    t.string   "item_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "loans", force: true do |t|
-    t.integer  "loan_id"
     t.integer  "item_type_id"
     t.integer  "item_id"
     t.integer  "user_id"
@@ -75,7 +68,6 @@ ActiveRecord::Schema.define(version: 20130815175924) do
   end
 
   create_table "magazines", force: true do |t|
-    t.integer  "magazine_id"
     t.string   "title"
     t.string   "volume"
     t.datetime "published_date"
@@ -83,25 +75,23 @@ ActiveRecord::Schema.define(version: 20130815175924) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_types_id"
+    t.integer  "category_id"
   end
 
-  create_table "magazines_users", force: true do |t|
+  create_table "magazines_users", id: false, force: true do |t|
     t.integer  "magazine_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "subcategories", force: true do |t|
-    t.integer  "subcategory_id"
-    t.string   "subcategory"
-    t.integer  "category_id"
+  create_table "publishing_houses", force: true do |t|
+    t.string   "publishing_house"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.integer  "user_id"
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at"
@@ -121,6 +111,5 @@ ActiveRecord::Schema.define(version: 20130815175924) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["user_id"], name: "index_users_on_user_id"
 
 end

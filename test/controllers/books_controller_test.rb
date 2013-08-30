@@ -17,11 +17,13 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should create book" do
-    assert_difference('Book.count') do
-      post :create, book: { book_id: @book.book_id, category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: "#{@book.title} II" }
+    assert_difference('Book.count', 1) do
+      post :create, book: { category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: "#{@book.title} II" }
     end
+    @current = assigns(:book)
 
-    assert_redirected_to book_path(assigns(:book))
+    assert_equal 0, @current.item_types_id
+    assert_redirected_to book_path(@current)
   end
 
   test "should show book" do
@@ -35,7 +37,7 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should update book" do
-    patch :update, id: @book, book: { book_id: @book.book_id, category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: @book.title }
+    patch :update, id: @book, book: { category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: @book.title }
     assert_redirected_to book_path(assigns(:book))
   end
 

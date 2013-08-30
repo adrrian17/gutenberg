@@ -13,7 +13,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, id: @user
     assert_response :success
   end
 
@@ -36,7 +36,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    patch :update, id: @user, user: { email: "another.#{@user.email}", first_name: @user.first_name, last_name: @user.last_name, user_id: @user.user_id }
+    patch :update, id: @user, user: { email: "another.#{@user.email}", first_name: @user.first_name, last_name: @user.last_name }
     assert_redirected_to user_path(assigns(:user))
   end
 
