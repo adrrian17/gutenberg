@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   title: Strange Days
   volume: Q1
   published_date: 2013-07-03 17:28:53
@@ -8,8 +9,17 @@ one:
   item_types_id: 1
 
 two:
+  id: 2
   title: Weird People
   volume: Q2
   published_date: 2013-07-03 17:28:53
   copies: 5
+  item_types_id: 1
+
+unavailable:
+  id: 3
+  title: Sick World
+  volume: Q3
+  published_date: 2013-08-03 17:28:53
+  copies: 0
   item_types_id: 1

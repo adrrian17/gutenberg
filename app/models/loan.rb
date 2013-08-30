@@ -14,7 +14,7 @@ class Loan < ActiveRecord::Base
   end
 
   def in_time?
-    (Time.now - self.created_at).to_i < 1.month
+    (Time.now - self.created_at) < solicited_item.loan_period.to_i
   end
 
   def delayed?
@@ -22,7 +22,7 @@ class Loan < ActiveRecord::Base
   end
 
   def delayed_days
-    (Time.now - self.created_at - 1.month).to_i / 60 / 60 / 24
+    (Time.now - self.created_at - solicited_item.loan_period).to_i / 60 / 60 / 24
   end
 
   def penalty

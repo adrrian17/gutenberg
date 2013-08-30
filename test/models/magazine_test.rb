@@ -13,5 +13,5 @@ class MagazineTest < ActiveSupport::TestCase
   test "should have item types id set to one" do
     @magazine = magazines(:one)
     assert_equal 1, @magazine.item_types_id
-  end  
+  end
 end

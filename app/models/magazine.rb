@@ -1,4 +1,5 @@
 class Magazine < ActiveRecord::Base
+  LOAN_PERIOD = 2.weeks
   validates :copies, :published_date, :title, :volume, presence: true
   validates :copies, numericality: { only_integer: true, greater_than: 0 }
   belongs_to :item_types
@@ -6,4 +7,8 @@ class Magazine < ActiveRecord::Base
   has_many :loans, foreign_key: :item_id
 
   before_save { |magazine| magazine.item_types_id = 1 }
+
+  def loan_period
+    LOAN_PERIOD
+  end
 end
