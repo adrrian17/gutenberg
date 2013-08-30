@@ -7,10 +7,7 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
-    - if true
-      = render 'layouts/signin'
-    - else 
-      = render 'layouts/menu'
+    = render 'layouts/menu'
     = yield
   %footer.container
     %p= "© Diverza #{Time.now.year}"

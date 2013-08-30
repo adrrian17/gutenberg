@@ -1,7 +1,17 @@
-#myCarousel.carousel.slide
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.brand{:href => "/"} Gutenberg
+      .nav-collapse.collapse
+        = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "navbar-form pull-right"}) do |f|
+          = f.email_field :email, :autofocus => true, :class => 'span2', :placeholder => 'usuario'
+          = f.password_field :password, :class => 'span2', :placeholder => 'contraseña'
+          = f.submit "Sign in", :class => 'btn btn-success'
+/ = render "devise/shared/links"
+.custom-landing.carousel.slide
   .carousel-inner
     .item.active
-      %img{:src => "/images/biblio.jpg"}/
+      = image_tag('header.jpg', alt: 'Biblioteca')
       .container
         .carousel-caption
           %h1 Bienvenido a la biblioteca.

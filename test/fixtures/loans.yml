@@ -1,6 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 first_loan:
+  id: 1
   item_type_id: 1
   item_id: 1
   user_id: 1
+
+delayed:
+  id: 2
+  item_type_id: 0
+  item_id: 1
+  user_id: 2
+
+delayed_mag:
+  id: 3
+  item_type_id: 1
+  item_id: 1
+  user_id: 2
