@@ -2,8 +2,12 @@
 
 one:
   author_id: 1
-  book_id: 1
+  book_id: 0
 
 two:
+  author_id: 1
+  book_id: 1
+
+three:
   author_id: 1
   book_id: 2
