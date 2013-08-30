@@ -1,7 +1,7 @@
 Gutenberg::Application.routes.draw do
   resources :publishing_houses
 
-  devise_for :users unless Rails.env.test?
+  devise_for :users
   get '/home', to: 'home#index'
 
   resources :categories
@@ -54,7 +54,7 @@ Gutenberg::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
