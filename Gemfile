@@ -33,6 +33,7 @@ gem 'coveralls', require: false
 group :development do
   gem 'erb2haml'
   gem "html2haml"
+  gem 'haml-rails'
 end
 
 group :assets do

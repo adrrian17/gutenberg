@@ -1,19 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 xkcd:
-  book_id: 1
+  id: 0
   title: "XKCD: the full collection"
   published_date: 2013-07-03 17:18:44
   pages: 200
   copies: 2
   publishing_house_id: 1
   category_id: 1
+  item_types_id: 0
 
 hunger_games:
-  book_id: 2
+  id: 1
   title: "The Hunger Games"
   published_date: 2013-07-03 17:18:44
   pages: 300
   copies: 3
   publishing_house_id: 1
   category_id: 1
+  item_types_id: 0
+
+unavailable:
+  id: 2
+  title: "The Dark and Creepy Side Of Steve Marimbas Jobs"
+  published_date: 2013-07-03 17:18:44
+  pages: 30
+  copies: 0
+  publishing_house_id: 1
+  category_id: 1
+  item_types_id: 0

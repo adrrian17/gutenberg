@@ -1,15 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  author_id: 
-  first_name: 
-  last_name: 
-  country_id: 
-  born_date: 2013-07-03 17:25:07
+  first_name: John
+  last_name: Smith
 
 two:
-  author_id: 
-  first_name: 
-  last_name: 
-  country_id: 
-  born_date: 2013-07-03 17:25:07
+  first_name:
+  last_name:
