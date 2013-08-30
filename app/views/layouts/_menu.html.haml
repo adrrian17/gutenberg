@@ -10,4 +10,4 @@
             %a{:href => "#"} Categorias
           %li
             %a{:href => "#"} Cuenta
-        %button.btn.btn-danger.pull-right{:type => "submit"} Salir
+        = link_to "Salir", destroy_user_session_path, :method => :delete, class: 'btn btn-danger pull-right'
