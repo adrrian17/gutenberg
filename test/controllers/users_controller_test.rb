@@ -1,9 +1,14 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+  tests Devise::RegistrationsController
+
   setup do
     @user = users(:ana)
     @user.password = 'foo' * 5
+
+    request.env["devise.mapping"] = Devise.mappings[:user]
   end
 
   test "should get index" do
