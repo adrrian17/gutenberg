@@ -10,7 +10,7 @@ gem 'sqlite3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
-
+gem 'underscore-rails'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
 

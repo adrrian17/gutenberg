@@ -9,6 +9,7 @@ class UsersControllerTest < ActionController::TestCase
     @user.password = 'foo' * 5
 
     request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   # test "should get index" do
