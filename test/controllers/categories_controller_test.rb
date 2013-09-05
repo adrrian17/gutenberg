@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @category = categories(:one)
+    request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   test "should get index" do

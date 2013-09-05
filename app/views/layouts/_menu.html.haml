@@ -1,13 +1,14 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
-    .container
-      %a.brand{:href => "/"} Gutenberg
-      .nav-collapse.collapse
-        %ul.nav
-          %li.active
-            %a{:href => "/"} Inicio
-          %li
-            %a{:href => "#"} Categorias
-          %li
-            %a{:href => "#"} Cuenta
-        = link_to "Salir", destroy_user_session_path, :method => :delete, class: 'btn btn-danger pull-right'
+- if user_signed_in?
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        %a.brand{:href => "/"} Gutenberg
+        .nav-collapse.collapse
+          %ul.nav
+            %li.active
+              %a{:href => "/"} Inicio
+            %li
+              %a{:href => "#"} Categorias
+            %li
+              %a{:href => "#"} Cuenta
+          = link_to "Salir", destroy_user_session_path, :method => :delete, class: 'btn btn-danger pull-right'

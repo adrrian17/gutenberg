@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class AuthorsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @author = authors(:one)
+    sign_in users(:ana)
   end
 
   test "should get index" do
