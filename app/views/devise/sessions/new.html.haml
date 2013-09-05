@@ -4,15 +4,16 @@
       %a.brand{:href => "/"} Gutenberg
       .nav-collapse.collapse
         = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "navbar-form pull-right"}) do |f|
-          = f.email_field :email, :autofocus => true, :class => 'span2', :placeholder => 'usuario'
+          = f.email_field :email, :autofocus => true, :class => 'span2', :placeholder => 'email'
           = f.password_field :password, :class => 'span2', :placeholder => 'contraseña'
-          = f.submit "Sign in", :class => 'btn btn-success'
+          = f.submit "Iniciar sesión", :class => 'btn btn-success'
 / = render "devise/shared/links"
-.custom-landing.carousel.slide
-  .carousel-inner
-    .item.active
+.custom-landing.carousel.slide  
+  .carousel-inner    
+    .item.active      
       = image_tag('header.jpg', alt: 'Biblioteca')
       .container
+        .not-signed-alert
         .carousel-caption
           %h1 Bienvenido a la biblioteca.
           %p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
