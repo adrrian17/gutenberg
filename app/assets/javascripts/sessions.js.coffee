@@ -1,6 +1,6 @@
 Session = (->
   _post = (form) ->
-    $.post('/users/sign_in', form)
+    $.post('/login', form)
     .done -> 
     	Turbolinks.visit('/home')
     .fail ->
@@ -24,7 +24,7 @@ SessionsRouter = ((pathname) ->
   postSession = Sessions().create
 
   # Routes
-  do postSession if /^\/$/.test(pathname) or /^\/users\/sign_in$/.test(pathname)
+  do postSession if /^\/$/.test(pathname) or /^\/login$/.test(pathname)
 )
 
 $(document).ready -> SessionsRouter(location.pathname)

@@ -1,7 +1,7 @@
 Gutenberg::Application.routes.draw do
   resources :publishing_houses
 
-  devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   get '/home', to: 'home#index'
 
   resources :categories
