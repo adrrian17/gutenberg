@@ -1,8 +1,8 @@
 Session = (->
   _post = (form) ->
     $.post('/login', form)
-    .done -> 
-    	Turbolinks.visit('/home')
+    .done ->
+      Turbolinks.visit('/home')
     .fail ->
       Gutenberg.Alert.info '', 'Combinación de correo electrónico y contraseña incorrecta.'
 
@@ -10,17 +10,17 @@ Session = (->
 )
 
 Sessions = (->
-	SELECTOR = "form[action='/users/sign_in']"
-	JQUERY_OBJECT = $ SELECTOR
+  SELECTOR = "#new_user"
+  JQUERY_OBJECT = $ SELECTOR
 
-	create: ->
-	  JQUERY_OBJECT.on 'submit', (e) ->
-	    e.preventDefault()
-	    Session().post($(@).serializeArray())
+  create: ->
+    JQUERY_OBJECT.on 'submit', (e) ->
+      e.preventDefault()
+      Session().post($(@).serializeArray())
 )
 
 SessionsRouter = ((pathname) ->
-	# Actions
+  # Actions
   postSession = Sessions().create
 
   # Routes
