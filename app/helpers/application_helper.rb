@@ -11,4 +11,8 @@ module ApplicationHelper
     end
     return final
   end
+
+  def all_categories
+    Category.all
+  end
 end

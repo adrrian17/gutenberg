@@ -2,8 +2,12 @@
 
 **Gutenberg** es una pequeña biblioteca. Administra préstamos de libros y revistas, así como los propios libros y revistas.
 
-[![Build Status](https://travis-ci.org/edmt/gutenberg.png?branch=master)](https://travis-ci.org/edmt/gutenberg)
-[![Coverage Status](https://coveralls.io/repos/edmt/gutenberg/badge.png)](https://coveralls.io/r/edmt/gutenberg)
+Master:  
+[![Build Status](https://travis-ci.org/adrrian17/gutenberg.png?branch=master)](https://travis-ci.org/adrrian17/gutenberg)  
+Dev:  
+[![Build Status](https://travis-ci.org/adrrian17/gutenberg.png?branch=dev)](https://travis-ci.org/adrrian17/gutenberg)
+
+[![Coverage Status](https://coveralls.io/repos/adrrian17/gutenberg/badge.png)](https://coveralls.io/r/adrrian17/gutenberg)
 
 ## Lista de recursos
 
