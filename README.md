@@ -7,7 +7,7 @@ Master:
 Dev:  
 [![Build Status](https://travis-ci.org/adrrian17/gutenberg.png?branch=dev)](https://travis-ci.org/adrrian17/gutenberg)
 
-[![Coverage Status](https://coveralls.io/repos/adrrian17/gutenberg/badge.png)](https://coveralls.io/r/adrrian17/gutenberg)
+[![Coverage Status](https://coveralls.io/repos/adrrian17/gutenberg/badge.png?branch=dev)](https://coveralls.io/r/adrrian17/gutenberg?branch=dev)
 
 ## Lista de recursos
 
