@@ -15,9 +15,6 @@ class BookTest < ActiveSupport::TestCase
 
   test "should have many and belongs to" do
     book = books(:xkcd)
-    author = authors(:one)
-
-    book.authors << author
 
     assert_equal 1, book.authors.size
   end

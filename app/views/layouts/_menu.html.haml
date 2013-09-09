@@ -1,13 +1,29 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
-    .container
-      %a.brand{:href => "/index"} Gutenberg
-      .nav-collapse.collapse
-        %ul.nav
-          %li.active
-            %a{:href => "/index"} Inicio
-          %li
-            %a{:href => "#"} Categorias
-          %li
-            %a{:href => "#"} Cuenta
-        %button.btn.btn-danger.pull-right{:type => "submit"} Salir
+- if user_signed_in?
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        = link_to "Gutenberg", home_path, class: 'brand'
+        .nav-collapse.collapse
+          %ul.nav.pull-right
+            %li
+              %a{:href => "#"}
+                %i.icon-user.icon-white
+                #{current_user.full_name}
+            %li
+              %a{:href => destroy_user_session_path, "data-method" => "delete"}
+                %i.icon-off.icon-white
+                Salir
+          %ul.nav
+            %li
+              = link_to "Inicio", home_path
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Categorías
+              %ul.dropdown-menu
+                %li.text-center
+                  - all_categories.each do |cat|
+                    %a{:href => category_path(cat.id)} #{cat.category}
+            %li
+              = link_to "Libros", books_path
+            %li
+              = link_to "Revistas", magazines_path

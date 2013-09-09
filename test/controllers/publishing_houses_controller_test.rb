@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class PublishingHousesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @publishing_house = publishing_houses(:DeBolsillo)
+    request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   test "should get index" do

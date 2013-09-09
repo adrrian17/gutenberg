@@ -1,156 +1,54 @@
 .container
   .custom-resource-container
     %h1 Libros más leídos
-    %table.table.table-hover.table-condensed
-      %thead
-        %tr
-          %th Título
-          %th Páginas
-          %th Copias
-          %th Categoría
-          %th Prestamo
-          %th Acciones
-      %tbody
-        %tr
-          %td
-            %a{:href => '#'} Narnia 1
-          %td 300
-          %td 2
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestado
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td
-            %a{:href => '#'} Narnia 2
-          %td 100
-          %td 1
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestado
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td
-            %a{:href => '#'} Narnia 3
-          %td 250
-          %td 4
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestado
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td
-            %a{:href => '#'} Narnia 4
-          %td 250
-          %td 4
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestado
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td
-            %a{:href => '#'} Narnia 5
-          %td 250
-          %td 4
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestado
-          %td
-            %i.icon-edit
-            %i.icon-trash
-    %legend
-    %a{:href => '#'} — Ver más libros —
+    .row
+      - @books.each do |book|
+        .book-container
+          .span3
+            %img{src: 'http://placehold.it/150x220'}
+            .span3.book-info
+              .row
+                = link_to book.title, book_path(book)
+              .row
+                por
+                = link_to book.authors.first.full_name, author_path(book.authors.first.id)
+              .row
+                = "Páginas: #{book.pages}"
+              .row
+                = "Copias: #{book.copies}"
+              .row
+                Categoría:
+                = link_to book.category.category, category_path(book.category.id)
+              .row
+                %button.btn.btn-success{:type => "submit"} Pedir prestado
+              .row
+                = link_to icon(:edit), edit_book_path(book)
+                = link_to icon(:trash), book, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+    %hr= link_to '— Ver más libros —', books_path
   .custom-resource-container
     %h1 Revistas más leídas
-    %table.table.table-hover.table-condensed
-      %thead
-        %tr
-          %th #
-          %th Título
-          %th Fecha de publicación
-          %th Copias
-          %th Categoría
-          %th Prestamo
-          %th Acciones
-      %tbody
-        %tr
-          %td 1
-          %td
-            %a{:href => '#'} Lorem Ipsum
-          %td 10/07/2013
-          %td 2
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestada
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td 2
-          %td
-            %a{:href => '#'} Lorem Ipsum
-          %td 10/07/2013
-          %td 1
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestada
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td 3
-          %td
-            %a{:href => '#'} Lorem Ipsum
-          %td 10/07/2013
-          %td 2
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestada
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td 3
-          %td
-            %a{:href => '#'} Lorem Ipsum
-          %td 10/07/2013
-          %td 4
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestada
-          %td
-            %i.icon-edit
-            %i.icon-trash
-        %tr
-          %td 3
-          %td
-            %a{:href => '#'} Lorem Ipsum
-          %td 10/07/2013
-          %td 3
-          %td
-            %a{:href => '#'} Ciencia ficción
-          %td
-            %button.btn.btn-success{:type => "submit"} Pedir prestada
-          %td
-            %i.icon-edit
-            %i.icon-trash
-    %legend
-    %a{:href => '#'} — Ver más revistas —
+    .row
+      - @magazines.each do |magazine|
+        .magazines-container
+          .span3
+            %img{src: 'http://placehold.it/150x220'}
+            .span3.book-info
+              .row
+                = link_to magazine.title, magazine_path(magazine)
+              .row
+                Volúmen:
+                = magazine.volume
+              .row
+                = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
+              .row
+                = "Copias: #{magazine.copies}"
+              .row
+                Categoría:
+                = link_to magazine.category.category, category_path(magazine.category.id)
+              .row
+                %button.btn.btn-success{:type => "submit"} Pedir prestada
+              .row
+                = link_to icon(:edit), edit_magazine_path(magazine)
+                = link_to icon(:trash), magazine, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
+    %hr= link_to '— Ver más revistas —', magazines_path
   %hr/
