@@ -8,6 +8,6 @@ class AuthorTest < ActiveSupport::TestCase
   test "should return author's full name" do
     author = authors(:one)
 
-    assert author.full_name != ''
+    assert author.full_name == 'John Smith'
   end
 end
