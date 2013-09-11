@@ -10,4 +10,10 @@ class UserTest < ActiveSupport::TestCase
   should_not allow_value("funny_email").for(:email)
   should allow_value("a@b.com").for(:email)
   should have_many(:loans)
+
+  test "should return user's full name" do
+    user = users(:ana)
+
+    assert user.full_name != ''
+  end
 end
