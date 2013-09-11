@@ -6,6 +6,12 @@
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
         0,
         null,
         null
@@ -203,9 +209,9 @@
         1,
         null,
         1,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/test/models/authors_books_test.rb": [
@@ -772,6 +778,6 @@
         null
       ]
     },
-    "timestamp": 1378699580
+    "timestamp": 1378869433
   }
 }
