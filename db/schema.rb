@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823185454) do
+ActiveRecord::Schema.define(version: 20130911045758) do
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "authors", ["slug"], name: "index_authors_on_slug"
 
   create_table "authors_books", id: false, force: true do |t|
     t.integer  "author_id"
@@ -37,7 +40,10 @@ ActiveRecord::Schema.define(version: 20130823185454) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_types_id"
+    t.string   "slug"
   end
+
+  add_index "books", ["slug"], name: "index_books_on_slug"
 
   create_table "books_users", id: false, force: true do |t|
     t.string   "book_id"
@@ -50,7 +56,10 @@ ActiveRecord::Schema.define(version: 20130823185454) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "categories", ["slug"], name: "index_categories_on_slug"
 
   create_table "item_types", force: true do |t|
     t.string   "item_type"
@@ -76,7 +85,10 @@ ActiveRecord::Schema.define(version: 20130823185454) do
     t.datetime "updated_at"
     t.integer  "item_types_id"
     t.integer  "category_id"
+    t.string   "slug"
   end
+
+  add_index "magazines", ["slug"], name: "index_magazines_on_slug"
 
   create_table "magazines_users", id: false, force: true do |t|
     t.integer  "magazine_id"
@@ -89,7 +101,10 @@ ActiveRecord::Schema.define(version: 20130823185454) do
     t.string   "publishing_house"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "publishing_houses", ["slug"], name: "index_publishing_houses_on_slug"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

@@ -5,6 +5,7 @@ class BookTest < ActiveSupport::TestCase
   should validate_presence_of(:published_date)
   should validate_presence_of(:pages)
   should validate_presence_of(:copies)
+  should validate_presence_of(:slug)
   should validate_uniqueness_of(:title).scoped_to(:publishing_house_id, :category_id)
   should validate_numericality_of(:pages).is_greater_than(0)
   should validate_numericality_of(:copies).is_greater_than(0)

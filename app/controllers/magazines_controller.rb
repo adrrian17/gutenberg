@@ -10,6 +10,7 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @magazines = Magazine.find_by_slug(params[:id])
   end
 
   # GET /magazines/new
@@ -64,11 +65,11 @@ class MagazinesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_magazine
-      @magazine = Magazine.find(params[:id])
+      @magazine = Magazine.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def magazine_params
-      params.require(:magazine).permit(:magazine_id, :title, :volume, :published_date, :copies)
+      params.require(:magazine).permit(:title, :volume, :published_date, :copies, :slug)
     end
 end

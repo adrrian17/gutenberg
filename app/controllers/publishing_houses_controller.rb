@@ -10,6 +10,7 @@ class PublishingHousesController < ApplicationController
   # GET /publishing_houses/1
   # GET /publishing_houses/1.json
   def show
+     @publishing_house = PublishingHouse.find_by_slug(params[:id])
   end
 
   # GET /publishing_houses/new
@@ -64,11 +65,11 @@ class PublishingHousesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_publishing_house
-      @publishing_house = PublishingHouse.find(params[:id])
+      @publishing_house = PublishingHouse.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publishing_house_params
-      params.require(:publishing_house).permit(:publishing_house)
+      params.require(:publishing_house).permit(:publishing_house, :slug)
     end
 end

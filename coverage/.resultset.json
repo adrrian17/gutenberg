@@ -1,7 +1,51 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/administrator/rails-projects/gutenberg/app/models/author.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/models/author.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/app/models/book.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/app/models/category.rb": [
+        1,
+        1,
+        1,
+        null,
         1,
         1,
         null,
@@ -10,37 +54,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/models/book.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/administrator/rails-projects/gutenberg/app/models/category.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/administrator/rails-projects/gutenberg/app/models/loan.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/models/loan.rb": [
         1,
         1,
         1,
@@ -98,7 +112,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/models/magazine.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/models/magazine.rb": [
         1,
         1,
         1,
@@ -112,16 +126,25 @@
         1,
         0,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/models/publishing_house.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/models/publishing_house.rb": [
+        1,
         1,
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/application_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/application_helper.rb": [
         1,
         1,
         0,
@@ -135,63 +158,76 @@
         null,
         0,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/authors_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/authors_helper.rb": [
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/books_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/books_helper.rb": [
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/categories_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/categories_helper.rb": [
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/magazines_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/magazines_helper.rb": [
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/publishing_houses_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/publishing_houses_helper.rb": [
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/helpers/users_helper.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/helpers/books_helper_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/helpers/books_helper_test.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/helpers/categories_helper_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/helpers/categories_helper_test.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/helpers/magazines_helper_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/helpers/magazines_helper_test.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/helpers/publishing_houses_helper_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/helpers/publishing_houses_helper_test.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/helpers/users_helper_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/helpers/users_helper_test.rb": [
         1,
         null,
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/author_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/author_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/test/models/authors_books_test.rb": [
         1,
         null,
         1,
@@ -200,18 +236,10 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/authors_books_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/book_test.rb": [
         1,
         null,
         1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/book_test.rb": [
-        1,
-        null,
         1,
         1,
         1,
@@ -237,7 +265,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/books_users_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/books_users_test.rb": [
         1,
         null,
         1,
@@ -246,15 +274,17 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/category_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/category_test.rb": [
         1,
         null,
         1,
         1,
         1,
+        1,
+        1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/loan_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/loan_test.rb": [
         1,
         null,
         1,
@@ -363,9 +393,10 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/magazine_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/magazine_test.rb": [
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -382,7 +413,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/magazines_users_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/magazines_users_test.rb": [
         1,
         null,
         1,
@@ -391,145 +422,36 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/publishing_house_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/publishing_house_test.rb": [
         1,
         null,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/administrator/rails-projects/gutenberg/test/models/user_test.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/controllers/authors_controller_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/models/user_test.rb": [
         1,
         null,
         1,
         1,
         1,
-        0,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/controllers/books_controller_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/authors_controller_test.rb": [
         1,
         null,
         1,
         1,
         1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null
-      ],
-      "/Users/administrator/rails-projects/gutenberg/test/controllers/categories_controller_test.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        0,
         0,
         0,
         null,
@@ -577,7 +499,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/controllers/magazines_controller_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/books_controller_test.rb": [
         1,
         null,
         1,
@@ -603,8 +525,9 @@
         0,
         0,
         null,
+        0,
         null,
-        null,
+        0,
         0,
         null,
         null,
@@ -632,7 +555,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/controllers/publishing_houses_controller_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/categories_controller_test.rb": [
         1,
         null,
         1,
@@ -686,7 +609,116 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/test/controllers/users_controller_test.rb": [
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/magazines_controller_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/publishing_houses_controller_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/adrian 1/ruby/gutenberg/test/controllers/users_controller_test.rb": [
         1,
         null,
         1,
@@ -744,7 +776,7 @@
         null,
         null
       ],
-      "/Users/administrator/rails-projects/gutenberg/app/controllers/application_controller.rb": [
+      "/Users/adrian 1/ruby/gutenberg/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -762,6 +794,6 @@
         null
       ]
     },
-    "timestamp": 1378394611
+    "timestamp": 1378875810
   }
 }
