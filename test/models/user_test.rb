@@ -14,6 +14,6 @@ class UserTest < ActiveSupport::TestCase
   test "should return user's full name" do
     user = users(:ana)
 
-    assert user.full_name != ''
+    assert user.full_name == 'Ana Foo'
   end
 end
