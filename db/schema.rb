@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911042713) do
+ActiveRecord::Schema.define(version: 20130911045758) do
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
@@ -101,7 +101,10 @@ ActiveRecord::Schema.define(version: 20130911042713) do
     t.string   "publishing_house"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "publishing_houses", ["slug"], name: "index_publishing_houses_on_slug"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

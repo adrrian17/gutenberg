@@ -135,8 +135,13 @@
       "/Users/adrian 1/ruby/gutenberg/app/models/publishing_house.rb": [
         1,
         1,
+        1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/helpers/application_helper.rb": [
@@ -420,6 +425,7 @@
       "/Users/adrian 1/ruby/gutenberg/test/models/publishing_house_test.rb": [
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -788,6 +794,6 @@
         null
       ]
     },
-    "timestamp": 1378874066
+    "timestamp": 1378875810
   }
 }
