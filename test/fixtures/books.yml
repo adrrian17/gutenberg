@@ -9,6 +9,7 @@ xkcd:
   publishing_house_id: 1
   category_id: 1
   item_types_id: 0
+  slug: xkcd-the-full-collection
 
 hunger_games:
   id: 1
@@ -19,13 +20,15 @@ hunger_games:
   publishing_house_id: 1
   category_id: 1
   item_types_id: 0
+  slug: the-hunger-games
 
 unavailable:
   id: 2
-  title: "The Dark and Creepy Side Of Steve Marimbas Jobs"
+  title: "The Dark and Creepy Side"
   published_date: 2013-07-03 17:18:44
   pages: 30
   copies: 0
   publishing_house_id: 1
   category_id: 1
   item_types_id: 0
+  slug: the-dark-and-creepy-side

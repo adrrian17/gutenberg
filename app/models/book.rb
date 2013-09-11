@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
   LOAN_PERIOD = 1.month
-  validates :title, :published_date, :pages, :copies, presence: true
+  validates :title, :published_date, :pages, :copies, :slug, presence: true
   validates :pages, numericality: { only_integer: true, greater_than: 0 }
   validates :copies, numericality: { only_integer: true, greater_than: 0 }
   validates :title, uniqueness: { scope: [:publishing_house_id, :category_id] }
@@ -15,5 +15,9 @@ class Book < ActiveRecord::Base
 
   def loan_period
     LOAN_PERIOD
+  end
+
+  def to_param
+    slug
   end
 end

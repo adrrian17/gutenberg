@@ -35,6 +35,10 @@
         1,
         0,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/adrian 1/ruby/gutenberg/app/models/category.rb": [
@@ -226,6 +230,7 @@
       "/Users/adrian 1/ruby/gutenberg/test/models/book_test.rb": [
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -778,6 +783,6 @@
         null
       ]
     },
-    "timestamp": 1378869433
+    "timestamp": 1378872993
   }
 }
