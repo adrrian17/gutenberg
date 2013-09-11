@@ -26,8 +26,8 @@ Dev
 ----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
 Libro               |   -   |   N-N    |          |          |    N-1    |   N-1     |       N-1         |    1-N     |
 Autor               |       |    -     |          |          |           |           |                   |            |
-Revistas            |       |          |     -    |          |           |   N-1     |                   |    1-N     |
-Usuarios            |       |          |          |     -    |           |           |       N-1         |    1-N     |
+Revistas            |       |          |     -    |          |           |   N-1     |       N-1         |    1-N     |
+Usuarios            |       |          |          |     -    |           |           |                   |    1-N     |
 Editorial           |       |          |          |          |     -     |           |                   |            |
 Categoria           |       |          |          |          |           |     -     |                   |            |
 Tipos de recurso    |       |          |          |          |           |           |         -         |    N-1     |
@@ -45,6 +45,7 @@ Prestamo            |       |          |          |          |           |      
     * publishing_house_id
     * category_id
     * timestamps
+    * slug
 * **Authors_Books**
     * book_id
     * timestamps
@@ -55,12 +56,14 @@ Prestamo            |       |          |          |          |           |      
     * first_name
     * last_name
     * timestamps
+    * slug
 * **Magazines**
     * title
     * volume
     * published_date
     * copies
     * timestamps
+    * slug
 * **Magazines_Users**
     * magazine_id
     * user_id
@@ -75,6 +78,7 @@ Prestamo            |       |          |          |          |           |      
 * **Categories**
     * category
     * timestamps
+    * slug
 * **ItemTypes**
     * item_type
     * timestamps
@@ -87,6 +91,7 @@ Prestamo            |       |          |          |          |           |      
 * **Publishing Houses**
     * publishing_house
     * timestamps
+    * slug
 
 
 ## Instalación
