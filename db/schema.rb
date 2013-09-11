@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911035201) do
+ActiveRecord::Schema.define(version: 20130911042713) do
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
@@ -85,7 +85,10 @@ ActiveRecord::Schema.define(version: 20130911035201) do
     t.datetime "updated_at"
     t.integer  "item_types_id"
     t.integer  "category_id"
+    t.string   "slug"
   end
+
+  add_index "magazines", ["slug"], name: "index_magazines_on_slug"
 
   create_table "magazines_users", id: false, force: true do |t|
     t.integer  "magazine_id"

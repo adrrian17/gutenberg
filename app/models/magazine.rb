@@ -1,6 +1,6 @@
 class Magazine < ActiveRecord::Base
   LOAN_PERIOD = 2.weeks
-  validates :copies, :published_date, :title, :volume, presence: true
+  validates :copies, :published_date, :title, :volume, :slug, presence: true
   validates :copies, numericality: { only_integer: true, greater_than: 0 }
   belongs_to :item_types
   belongs_to :category
@@ -10,5 +10,9 @@ class Magazine < ActiveRecord::Base
 
   def loan_period
     LOAN_PERIOD
+  end
+
+  def to_param
+    slug
   end
 end
