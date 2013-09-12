@@ -2,39 +2,39 @@
   .custom-resource-container
     %h1 Libros más leídos
     .row
-      - @books.each do |book|
+      - all_books.each do |book|
         .book-container
           .span3
             %img{src: 'http://placehold.it/150x220'}
             .span3.book-info
               .row
-                = link_to book.title, book_path(book)
+                = link_to book.title, book_path(book.slug)
               .row
                 por
-                = link_to book.authors.first.full_name, author_path(book.authors.first.id)
+                = link_to book.authors.first.full_name, author_path(book.authors.first.slug)
               .row
                 = "Páginas: #{book.pages}"
               .row
                 = "Copias: #{book.copies}"
               .row
                 Categoría:
-                = link_to book.category.category, category_path(book.category.id)
+                = link_to book.category.category, category_path(book.category.slug)
               .row
                 %button.btn.btn-success{:type => "submit"} Pedir prestado
               .row
-                = link_to icon(:edit), edit_book_path(book)
-                = link_to icon(:trash), book, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+                = link_to icon(:edit), edit_book_path(book.slug)
+                = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
     %hr= link_to '— Ver más libros —', books_path
   .custom-resource-container
     %h1 Revistas más leídas
     .row
-      - @magazines.each do |magazine|
+      - all_magazines.each do |magazine|
         .magazines-container
           .span3
             %img{src: 'http://placehold.it/150x220'}
             .span3.book-info
               .row
-                = link_to magazine.title, magazine_path(magazine)
+                = link_to magazine.title, magazine_path(magazine.slug)
               .row
                 Volúmen:
                 = magazine.volume
@@ -44,11 +44,11 @@
                 = "Copias: #{magazine.copies}"
               .row
                 Categoría:
-                = link_to magazine.category.category, category_path(magazine.category.id)
+                = link_to magazine.category.category, category_path(magazine.category.slug)
               .row
                 %button.btn.btn-success{:type => "submit"} Pedir prestada
               .row
-                = link_to icon(:edit), edit_magazine_path(magazine)
-                = link_to icon(:trash), magazine, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
+                = link_to icon(:edit), edit_magazine_path(magazine.slug)
+                = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
     %hr= link_to '— Ver más revistas —', magazines_path
   %hr/
