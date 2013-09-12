@@ -22,7 +22,7 @@
               %ul.dropdown-menu
                 %li.text-center
                   - all_categories.each do |cat|
-                    %a{:href => category_path(cat.id)} #{cat.category}
+                    %a{:href => category_path(cat.slug)} #{cat.category}
             %li
               = link_to "Libros", books_path
             %li
