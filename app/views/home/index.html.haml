@@ -9,16 +9,16 @@
             .span3.book-info
               .row
                 = link_to book.title, book_path(book.slug)
-              .row
+              .row#authors-row 
                 por
-                = raw book.authors.collect { |author| link_to author.full_name, author_path(author.slug) }.join(", ")
+                = raw(authors_links(book))
               - if book.copies > 0 
                 .row
                   %button.btn.btn-success{:type => "submit"} Pedir prestado
               - else
                 .row 
                   %button.btn.disabled{:type => "submit"} Copias agotadas
-              - if current_user.is_admin
+              - if current_user.admin?
                 .row
                   = link_to icon(:edit), edit_book_path(book.slug)
                   = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
@@ -40,7 +40,7 @@
                 = magazine.volume
               .row
                 %button.btn.btn-success{:type => "submit"} Pedir prestada
-              - if current_user.is_admin
+              - if current_user.admin?
                 .row
                   = link_to icon(:edit), edit_magazine_path(magazine.slug)
                   = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
