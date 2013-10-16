@@ -22,7 +22,10 @@
                 .row
                   = link_to icon(:edit), edit_book_path(book.slug)
                   = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
-    %hr= link_to '— Ver más libros —', books_path
+    %hr
+    .row.text-center
+      %span
+        = link_to '— Ver más libros —', books_path
   .custom-resource-container
     %h1 Revistas más leídas
     .row
@@ -30,7 +33,7 @@
         .magazines-container
           .span3
             %img{src: 'http://placehold.it/150x220'}
-            .span3.book-info
+            .span3.magazine-info
               .row
                 = link_to magazine.title, magazine_path(magazine.slug)
               .row
@@ -44,5 +47,8 @@
                 .row
                   = link_to icon(:edit), edit_magazine_path(magazine.slug)
                   = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
-    %hr= link_to '— Ver más revistas —', magazines_path
+    %hr
+    .row.text-center
+      %span
+        = link_to '— Ver más revistas —', magazines_path
   %hr/

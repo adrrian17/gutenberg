@@ -2,28 +2,33 @@
   margin-bottom: 70px;
 
   h1 {
-    padding-bottom: 40px;
     text-align: center;
+  }
+
+  span {
+    font-size: 18px;
   }
 
   .book-container {
     float:left;
     overflow: hidden;
+    margin-top: 40px;
+  
+    .book-info {
+      .row {
+        padding: 5px 5px 5px 0;
+      }
+
+      #authors-row {
+        padding-right: 10px;
+      }
+    }
   }
 
-  .book-info {
-    .row {
-      padding: 5px 5px 5px 0;
-    }
-
-    #authors-row {
-      padding-right: 10px;
-    }
-  }
-
-  .magazine-container {
+  .magazines-container {
     float:left;
     overflow: hidden;
+    margin-top: 40px;
   }
 
   .magazine-info {
