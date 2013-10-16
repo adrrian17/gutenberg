@@ -13,7 +13,7 @@ class LoanTest < ActiveSupport::TestCase
   setup do
     @in_time = loans(:first_loan)
     @delayed_book = loans(:delayed)
-    @delayed_book.created_at = Time.now - Book::LOAN_PERIOD
+    @delayed_book.created_at = Time.now - (Book::LOAN_PERIOD + 1.day)
     @delayed_magazine = loans(:delayed_mag)
     @delayed_magazine.created_at = Time.now - (2.weeks + 1.day)
   end
