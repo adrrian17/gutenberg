@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
   LOAN_PERIOD = 1.month
-  validates :title, :published_date, :pages, :copies, :slug, :category_id, :publishing_house_id, presence: true
+  validates :title, :published_date, :pages, :copies, :category_id, :publishing_house_id, presence: true
   validates :pages, numericality: { only_integer: true, greater_than: 0 }
   validates :copies, numericality: { only_integer: true, greater_than: 0 }
   validates :title, uniqueness: { scope: [:publishing_house_id, :category_id] }
@@ -19,10 +19,6 @@ class Book < ActiveRecord::Base
   end
 
   def set_slug 
-    self.slug = self.title.parameterize
-  end
-
-  def update_slug 
     self.slug = self.title.parameterize
   end
 
