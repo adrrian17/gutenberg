@@ -11,7 +11,7 @@ class Book < ActiveRecord::Base
   belongs_to :item_types
   belongs_to :publishing_house
 
-  before_validation :set_slug
+  before_save :set_slug
   before_save :set_item_type
   
   def loan_period
