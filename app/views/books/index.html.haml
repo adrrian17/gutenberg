@@ -1,26 +1,23 @@
 .container
-  .custom-resource-container
-    %h1 Libros más leídos
-    .row
-      - @books.each do |book|
-        .book-container
-          .span3
-            %img{src: 'http://placehold.it/150x220'}
-            .span3.book-info
-              .row
-                = link_to book.title, book_path(book)
-              .row
-                por
-                = link_to book.authors.first.full_name, author_path(book.authors.first.id)
-              .row
-                = "Páginas: #{book.pages}"
-              .row
-                = "Copias: #{book.copies}"
-              .row
-                Categoría:
-                = link_to book.category.category, category_path(book.category.id)
-              .row
-                %button.btn.btn-success{:type => "submit"} Pedir prestado
-              .row
-                = link_to icon(:edit), edit_book_path(book)
-                = link_to icon(:trash), book, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+  %h1 Libros
+  .row
+    - all_books.each do |book|
+      .book-container.col-md-4
+        %img.pull-left{src: 'http://placehold.it/150x220'}
+        .book-info.col-md-6
+          .row
+            = link_to book.title, book_path(book.slug)
+          .row
+            por
+            = raw(authors_links(book))
+          - if book.copies > 0 
+            .row
+              %button.btn.btn-success{:type => "submit"} Pedir prestado
+          - else
+            .row 
+              %button.btn.disabled{:type => "submit"} Copias agotadas
+          - if current_user.admin?
+            .row
+              = link_to icon(:edit), edit_book_path(book.slug)
+              = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+  %hr

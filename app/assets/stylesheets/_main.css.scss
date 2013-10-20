@@ -3,7 +3,7 @@
 @import "home";
 
 body {
-  padding-top: 60px + $viewMarginTop;
+  padding-top: 70px;
 }
 
 .align-center {
@@ -11,6 +11,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#login {
+  .form-control {
+    width: auto;
+  }
 }
 
 a {

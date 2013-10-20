@@ -1,26 +1,21 @@
-.container
-  .custom-resource-container
-    %h1 Revistas
-    .row
-      - @magazines.each do |magazine|
-        .magazines-container
-          .span3
-            %img{src: 'http://placehold.it/150x220'}
-            .span3.book-info
-              .row
-                = link_to magazine.title, magazine_path(magazine)
-              .row
-                Volúmen:
-                = magazine.volume
-              .row
-                = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
-              .row
-                = "Copias: #{magazine.copies}"
-              .row
-                Categoría:
-                = link_to magazine.category.category, category_path(magazine.category.id)
-              .row
-                %button.btn.btn-success{:type => "submit"} Pedir prestada
-              .row
-                = link_to icon(:edit), edit_magazine_path(magazine)
-                = link_to icon(:trash), magazine, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
+.container 
+  %h1 Revistas
+  .row
+    - all_magazines.each do |magazine|
+      .magazines-container.col-md-4
+        %img.pull-left{src: 'http://placehold.it/150x220'}
+        .magazine-info.col-md-6
+          .row
+            = link_to magazine.title, magazine_path(magazine.slug)
+          .row
+            = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
+          .row
+            Volúmen:
+            = magazine.volume
+          .row
+            %button.btn.btn-success{:type => "submit"} Pedir prestada
+          - if current_user.admin?
+            .row
+              = link_to icon(:edit), edit_magazine_path(magazine.slug)
+              = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
+  %hr
