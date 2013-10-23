@@ -2,13 +2,13 @@
   %h1 Libros
   .row
     - all_books.each do |book|
-      .book-container.col-md-4
+      .book-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
         %img.pull-left{src: 'http://placehold.it/150x220'}
-        .book-info.col-md-6
+        .book-info.col-xs-4.col-sm-6.col-md-6
           .row
-            = link_to book.title, book_path(book.slug)
+            = link_to book.title, book_path(book.slug), class: 'book-title'
           .row
-            por
+            por 
             = raw(authors_links(book))
           - if book.copies > 0 
             .row
@@ -25,9 +25,9 @@
   %h1 Revistas
   .row
     - all_magazines.each do |magazine|
-      .magazines-container.col-md-4
+      .magazine-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
         %img.pull-left{src: 'http://placehold.it/150x220'}
-        .magazine-info.col-md-6
+        .magazine-info.col-xs-5.col-sm-6.col-md-6
           .row
             = link_to magazine.title, magazine_path(magazine.slug)
           .row
