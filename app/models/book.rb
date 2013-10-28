@@ -27,9 +27,7 @@ class Book < ActiveRecord::Base
   end
 
   def authors_names
-    self.authors.map do |author| 
-      author.full_name
-    end.join(', ')
+    self.authors.map(&:full_name).join ', '
   end
 
   def set_slug 
