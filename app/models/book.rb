@@ -18,6 +18,18 @@ class Book < ActiveRecord::Base
     LOAN_PERIOD
   end
 
+  def category_name
+    self.category.category
+  end
+
+  def pub_house_name
+    self.publishing_house.publishing_house
+  end
+
+  def authors_names
+    self.authors.map(&:full_name).join ', '
+  end
+
   def set_slug 
     self.slug = self.title.parameterize
   end
