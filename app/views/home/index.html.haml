@@ -30,7 +30,7 @@
         %img.pull-left{src: 'http://placehold.it/150x220'}
         .magazine-info.col-xs-5.col-sm-6.col-md-6
           .row
-            = link_to magazine.title, magazine_path(magazine.slug)
+            %span= magazine.title
           .row
             = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
           .row
