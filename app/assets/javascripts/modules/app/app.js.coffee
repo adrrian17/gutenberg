@@ -1,9 +1,9 @@
 window.Gutenberg =
   Alert: {}
 
-Always = (->
-  $('a.slide').pageslide()
-)
+# Always = (->
+#   $('a.slide').pageslide()
+# )
 
 Home = (->
   $('.book-title').on 'click', (e) ->
@@ -56,5 +56,5 @@ BookModal = (book) ->
     </div>", book)
 
 $(document).on 'ready page:load', ->
-  do Always
+  # do Always
   do Home
