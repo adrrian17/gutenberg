@@ -1,9 +1,9 @@
 window.Gutenberg =
   Alert: {}
 
-Always = (->
-  $('a.slide').pageslide()
-)
+# Always = (->
+#   $('a.slide').pageslide()
+# )
 
 Home = (->
   $('.book-title').on 'click', (e) ->
@@ -18,7 +18,9 @@ Home = (->
       console.log 'Nah'
 )
 
-BookModal = (book) ->
+BookModal = (book) -> 
+  loan_button = if book.copies > 0 then "<button class='btn btn-success' type='button'>Pedir prestado</button>" else "<button class='btn btn-succes' disabled='disabled' type='button'>Copias agotadas</button>"
+
   _.template("
     <div class='modal-dialog'>
       <div class='modal-content'>
@@ -50,11 +52,11 @@ BookModal = (book) ->
         </div>
         <div class='modal-footer'>
           <button class='btn btn-default' data-dismiss='modal' type='button'>Cerrar</button>
-          <button class='btn btn-success' type='button'>Pedir prestado</button>
+          #{loan_button}
         </div>
       </div>
     </div>", book)
 
 $(document).on 'ready page:load', ->
-  do Always
+  # do Always
   do Home
