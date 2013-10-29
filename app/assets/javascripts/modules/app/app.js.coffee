@@ -11,7 +11,7 @@ Home = (->
     
     slug = $(@).data 'slug'
     
-    $.getJSON("books/#{slug}.json")
+    $.getJSON("/books/#{slug}.json")
     .done (book) ->
       $('#book-preview').html(BookModal(book)).modal()
     .fail ->
