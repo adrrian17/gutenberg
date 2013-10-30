@@ -1,45 +1,47 @@
 #book-preview.modal.fade
-.container
-  %h1 Libros de #{@category.category.downcase}
-  .row
-    - @books.each do |book|
-      .book-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
-        %img.pull-left{src: 'http://placehold.it/150x220'}
-        .book-info.col-xs-4.col-sm-6.col-md-6
-          .row
-            = link_to book.title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
-          .row
-            por
-            = raw(authors_links(book))
-          - if book.copies > 0 
+- unless @books.empty?
+  .container
+    %h1 Libros de #{@category.category.downcase}
+    .row
+      - @books.each do |book|
+        .book-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
+          %img.pull-left{src: 'http://placehold.it/150x220'}
+          .book-info.col-xs-4.col-sm-6.col-md-6
             .row
-              %button.btn.btn-success{:type => "submit"} Pedir prestado
-          - else
-            .row 
-              %button.btn.disabled{:type => "submit"} Copias agotadas
-          - if current_user.admin?
+              = link_to book.title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
             .row
-              = link_to icon(:edit), edit_book_path(book.slug)
-              = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
-  %hr
-.container 
-  %h1 Revistas de #{@category.category.downcase}
-  .row
-    - @magazines.each do |magazine|
-      .magazine-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
-        %img.pull-left{src: 'http://placehold.it/150x220'}
-        .magazine-info.col-xs-4.col-sm-6.col-md-6
-          .row
-            %span= magazine.title
-          .row
-            = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
-          .row
-            Volúmen:
-            = magazine.volume
-          .row
-            %button.btn.btn-success{:type => "submit"} Pedir prestada
-          - if current_user.admin?
+              por
+              = raw(authors_links(book))
+            - if book.copies > 0 
+              .row
+                %button.btn.btn-success{:type => "submit"} Pedir prestado
+            - else
+              .row 
+                %button.btn.disabled{:type => "submit"} Copias agotadas
+            - if current_user.admin?
+              .row
+                = link_to icon(:edit), edit_book_path(book.slug)
+                = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+    %hr
+- unless @magazines.empty?
+  .container 
+    %h1 Revistas de #{@category.category.downcase}
+    .row
+      - @magazines.each do |magazine|
+        .magazine-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
+          %img.pull-left{src: 'http://placehold.it/150x220'}
+          .magazine-info.col-xs-4.col-sm-6.col-md-6
             .row
-              = link_to icon(:edit), edit_magazine_path(magazine.slug)
-              = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
-  %hr
+              %strong= magazine.title
+            .row
+              = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
+            .row
+              Volúmen:
+              = magazine.volume
+            .row
+              %button.btn.btn-success{:type => "submit"} Pedir prestada
+            - if current_user.admin?
+              .row
+                = link_to icon(:edit), edit_magazine_path(magazine.slug)
+                = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
+    %hr
