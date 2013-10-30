@@ -1,3 +1,4 @@
+#book-preview.modal.fade
 .container
   %h1 Libros de #{@author.full_name}
   .row
@@ -6,7 +7,7 @@
         %img.pull-left{src: 'http://placehold.it/150x220'}
         .book-info.col-xs-4.col-sm-6.col-md-6
           .row
-            = link_to book.title, book_path(book.slug)
+            = link_to book.title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
           .row
             por
             = raw(authors_links(book))
