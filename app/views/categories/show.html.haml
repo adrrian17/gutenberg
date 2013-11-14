@@ -1,10 +1,11 @@
 #book-preview.modal.fade
 - unless @books.empty?
   .container
-    %h1 Libros de #{@category.category.downcase}
+    %h2 Libros de #{@category.category.downcase}
     .row
+      = render 'books/books_shelf_phone'
       - @books.each do |book|
-        .book-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
+        #books-shelf.col-xs-12.col-sm-6.col-md-5.col-lg-4
           %img.pull-left{src: 'http://placehold.it/150x220'}
           .book-info.col-xs-4.col-sm-6.col-md-6
             .row
@@ -25,10 +26,11 @@
     %hr
 - unless @magazines.empty?
   .container 
-    %h1 Revistas de #{@category.category.downcase}
+    %h2 Revistas de #{@category.category.downcase}
     .row
+      = render 'magazines/magazines_shelf_phone'
       - @magazines.each do |magazine|
-        .magazine-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
+        #magazines-shelf.col-xs-12.col-sm-6.col-md-5.col-lg-4
           %img.pull-left{src: 'http://placehold.it/150x220'}
           .magazine-info.col-xs-4.col-sm-6.col-md-6
             .row

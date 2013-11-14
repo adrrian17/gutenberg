@@ -1,0 +1,26 @@
+#magazines-shelf {
+  margin-bottom: 20px;
+}
+
+#magazines-shelf-phone {
+  display: none !important;
+
+  .label {
+    margin: 5px;
+    font-weight: normal;
+  }
+
+  a {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) { 
+  #magazines-shelf-phone {
+    display: block !important;
+  } 
+
+  #magazines-shelf {
+    display: none !important;
+  }
+}

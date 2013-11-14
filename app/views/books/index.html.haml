@@ -1,9 +1,10 @@
 #book-preview.modal.fade
 .container
-  %h1 Libros
+  %h2 Libros
   .row
+    = render 'books_shelf_phone'
     - all_books.each do |book|
-      .book-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
+      #books-shelf.col-xs-12.col-sm-6.col-md-5.col-lg-4
         %img.pull-left{src: 'http://placehold.it/150x220'}
         .book-info.col-xs-4.col-sm-6.col-md-6
           .row

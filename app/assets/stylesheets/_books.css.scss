@@ -1,0 +1,26 @@
+#books-shelf {
+  margin-bottom: 20px;
+}
+
+#books-shelf-phone {
+  display: none !important;
+
+  .label {
+    margin: 5px;
+    font-weight: normal;
+  }
+
+  a {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) { 
+  #books-shelf-phone {
+    display: block !important;
+  } 
+
+  #books-shelf {
+    display: none !important;
+  }
+}

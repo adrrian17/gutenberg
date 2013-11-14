@@ -1,10 +1,12 @@
 #book-preview.modal.fade
 .container
-  %h1 Libros
+  %h2 Libros populares
+  .row
+    = render 'books/books_shelf_phone'
   - all_books.each_slice(3) do |tuple3|
     .row
       - tuple3.each do |book|
-        .book.col-xs-7.col-sm-6.col-md-4
+        #books-shelf.col-xs-7.col-sm-6.col-md-4
           .row
             .col-xs-6
               %img.img-responsive{src:'http://placehold.it/150x220'}
@@ -24,11 +26,13 @@
 
   %hr
 .container 
-  %h1 Revistas
+  %h2 Revistas populares
+  .row 
+    = render 'magazines/magazines_shelf_phone'
   - all_magazines.each_slice(3) do |tuple3|
     .row
       - tuple3.each do |magazine|
-        .magazine.col-xs-7.col-sm-6.col-md-4
+        #magazines-shelf.col-xs-7.col-sm-6.col-md-4
           .row
             .col-xs-6
               %img.img-responsive{src:'http://placehold.it/150x220'}

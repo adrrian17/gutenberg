@@ -1,0 +1,44 @@
+#magazines-shelf-phone.panel-group.col-xs-12
+  - @magazines.each do |magazine|
+    .panel.panel-default
+      .panel-heading{"data-parent" => "#magazines-shelf-phone", "data-toggle" => "collapse", href: "#magazine-#{magazine.id}"}
+        %h4.panel-title= magazine.title
+      %div{id: "magazine-#{magazine.id}", class: 'panel-collapse collapse'}
+        .panel-body.col-xs-12
+          .row 
+            .col-xs-12.text-center
+              %img{src: 'http://placehold.it/150x220'}
+              %hr
+          .row
+            .col-xs-12
+              %h4= magazine.title
+              %p
+                %strong Publicada:
+                = "#{magazine.published_date.strftime("%Y/%m/%d")}"
+              %p
+                %strong Volúmen:
+                = magazine.volume
+          .row 
+            .col-xs-12
+              %p 
+                %strong Categoría:
+              %p 
+                %h4
+                  %span.label.label-primary= magazine.category.category
+              %hr
+          .row 
+            .col-xs-12
+              - if magazine.copies > 0 
+                %button.btn.btn-success.col-xs-12{:type => "submit"} Pedir prestada
+              - else
+                %button.btn.disabled{:type => "submit"} Copias agotadas
+          - if current_user.admin?
+            %hr
+            .row 
+              .col-xs-12
+                %a{href: edit_magazine_path(magazine.slug), class: 'btn btn-default pull-left'}
+                  %span.glyphicon.glyphicon-edit
+                  Editar
+                %a{href: edit_magazine_path(magazine.slug), class: 'btn btn-default pull-right', data: { confirm: '¿Quieres borrar esta revista?' }, method: :delete}
+                  %span.glyphicon.glyphicon-trash
+                  Borrar
