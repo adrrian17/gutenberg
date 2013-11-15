@@ -1,50 +1,12 @@
 #book-preview.modal.fade
 .container
-  %h1 Libros
-  - all_books.each_slice(3) do |tuple3|
-    .row
-      - tuple3.each do |book|
-        .book.col-xs-7.col-sm-6.col-md-4
-          .row
-            .col-xs-6
-              %img.img-responsive{src:'http://placehold.it/150x220'}
-            .col-xs-6
-              .abstract
-                = link_to book.title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
-                .info
-                  por  
-                  = raw(authors_links(book))
-                - if book.copies > 0 
-                  %button.btn.btn-success{:type => "submit"} Pedir prestado
-                - else
-                  %button.btn.disabled{:type => "submit"} Copias agotadas
-                - if current_user.admin?
-                  = link_to icon(:edit), edit_book_path(book.slug)
-                  = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete          
-
+  %h2 Libros populares
+  = render 'books/books_shelf_phone'
+  = render 'books/books_shelf'
   %hr
 .container 
-  %h1 Revistas
-  - all_magazines.each_slice(3) do |tuple3|
-    .row
-      - tuple3.each do |magazine|
-        .magazine.col-xs-7.col-sm-6.col-md-4
-          .row
-            .col-xs-6
-              %img.img-responsive{src:'http://placehold.it/150x220'}
-            .col-xs-6
-              .abstract
-                %strong= magazine.title
-                .info
-                  .row
-                    = "Publicada: #{magazine.published_date.strftime("%Y/%m/%d")}"
-                  .row
-                    Volúmen:
-                    = magazine.volume
-                  .row
-                    %button.btn.btn-success{:type => "submit"} Pedir prestada
-                  - if current_user.admin?
-                    .row
-                      = link_to icon(:edit), edit_magazine_path(magazine.slug)
-                      = link_to icon(:trash), magazine.slug, data: { confirm: '¿Quieres borrar este revista?' }, method: :delete
-%hr
+  %h2 Revistas populares
+  .row 
+  = render 'magazines/magazines_shelf_phone'
+  = render 'magazines/magazines_shelf'
+  %hr

@@ -1,0 +1,29 @@
+#books-shelf {
+  button {
+    width: 100%;
+  }
+}
+
+#books-shelf-phone {
+  display: none !important;
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) { 
+  #books-shelf-phone {
+    display: block !important;
+  } 
+
+  #books-shelf {
+    display: none !important;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 768px) { 
+ .book {
+    width: 50%;
+  }
+}
