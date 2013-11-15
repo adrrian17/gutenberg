@@ -1,0 +1,28 @@
+#magazines-shelf
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .row
+        - @magazines.each do |magazine|
+          .magazine.col-xs-4.col-sm-6.col-md-4.col-lg-4
+            .panel.panel-default
+              .panel-body
+                .row 
+                  .col-xs-12.col-sm-12.col-md-12.col-lg-12.text-center
+                    %img{src:'http://placehold.it/150x220'}
+                    %hr
+                .row
+                  .col-xs-12.col-sm-12.col-md-12.col-lg-12
+                    %h4= magazine.title
+                    %p
+                      %strong Publicada: 
+                      #{magazine.published_date.strftime("%Y/%m/%d")}
+                    %p
+                      %strong Volumen: 
+                      = magazine.volume
+                    %p 
+                      %strong Categoria: 
+                      = link_to magazine.category.category, category_path(magazine.category.slug)
+                    - if magazine.copies > 0 
+                      %button.btn.btn-success{:type => "submit"} Pedir prestado
+                    - else
+                      %button.btn.disabled{:type => "submit"} Copias agotadas  

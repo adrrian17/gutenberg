@@ -1,26 +1,6 @@
+#book-preview.modal.fade
 .container
-  .custom-resource-container
-    %h1 Libros más leídos
-    .row
-      - @books.each do |book|
-        .book-container
-          .span3
-            %img{src: 'http://placehold.it/150x220'}
-            .span3.book-info
-              .row
-                = link_to book.title, book_path(book)
-              .row
-                por
-                = link_to book.authors.first.full_name, author_path(book.authors.first.id)
-              .row
-                = "Páginas: #{book.pages}"
-              .row
-                = "Copias: #{book.copies}"
-              .row
-                Categoría:
-                = link_to book.category.category, category_path(book.category.id)
-              .row
-                %button.btn.btn-success{:type => "submit"} Pedir prestado
-              .row
-                = link_to icon(:edit), edit_book_path(book)
-                = link_to icon(:trash), book, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+  %h2 Libros
+  = render 'books_shelf_phone'
+  = render 'books/books_shelf'
+  %hr

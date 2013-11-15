@@ -1,9 +1,10 @@
 @import "bootstrap";
 @import "config/variables";
-@import "home";
+@import "books";
+@import "magazines";
 
 body {
-  padding-top: 60px + $viewMarginTop;
+  padding-top: 50px;
 }
 
 .align-center {
@@ -17,4 +18,10 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.divider-line {
+  height: 1px;
+  background-color: #E3E3E3;
+  margin: 5px 0 5px 0;
 }

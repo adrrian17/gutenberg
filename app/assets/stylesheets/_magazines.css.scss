@@ -1,0 +1,29 @@
+#magazines-shelf {
+  button {
+    width: 100%;
+  }
+}
+
+#magazines-shelf-phone {
+  display: none !important;
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) { 
+  #magazines-shelf-phone {
+    display: block !important;
+  } 
+
+  #magazines-shelf {
+    display: none !important;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 768px) { 
+ .magazine {
+    width: 50%;
+  }
+}

@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
+//= require_tree ./modules/sessions
+//= require_tree ./modules/alert
+//= require_tree ./modules/app
+//= require underscore
