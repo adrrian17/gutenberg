@@ -1,5 +1,7 @@
 #books-shelf {
-  margin-bottom: 20px;
+  button {
+    width: 100%;
+  }
 }
 
 #books-shelf-phone {
@@ -19,4 +21,9 @@
     display: none !important;
   }
 }
+
+@media (min-width: 561px) and (max-width: 768px) { 
+ .book {
+    width: 50%;
+  }
 }

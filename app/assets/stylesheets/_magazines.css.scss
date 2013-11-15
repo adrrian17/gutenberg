@@ -1,5 +1,7 @@
 #magazines-shelf {
-  margin-bottom: 20px;
+  button {
+    width: 100%;
+  }
 }
 
 #magazines-shelf-phone {
@@ -19,4 +21,9 @@
     display: none !important;
   }
 }
+
+@media (min-width: 561px) and (max-width: 768px) { 
+ .magazine {
+    width: 50%;
+  }
 }
