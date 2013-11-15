@@ -1,25 +1,6 @@
 #book-preview.modal.fade
 .container
   %h2 Libros
-  .row
-    = render 'books_shelf_phone'
-    - all_books.each do |book|
-      #books-shelf.col-xs-12.col-sm-6.col-md-5.col-lg-4
-        %img.pull-left{src: 'http://placehold.it/150x220'}
-        .book-info.col-xs-4.col-sm-6.col-md-6
-          .row
-            = link_to book.title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
-          .row
-            por 
-            = raw(authors_links(book))
-          - if book.copies > 0 
-            .row
-              %button.btn.btn-success{:type => "submit"} Pedir prestado
-          - else
-            .row 
-              %button.btn.disabled{:type => "submit"} Copias agotadas
-          - if current_user.admin?
-            .row
-              = link_to icon(:edit), edit_book_path(book.slug)
-              = link_to icon(:trash), book.slug, data: { confirm: '¿Quieres borrar este libro?' }, method: :delete
+  = render 'books_shelf_phone'
+  = render 'books/books_shelf'
   %hr
