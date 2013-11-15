@@ -5,17 +5,12 @@
 #books-shelf-phone {
   display: none !important;
 
-  .label {
-    margin: 5px;
-    font-weight: normal;
-  }
-
-  a {
-    width: 48%;
+  button {
+    width: 100%;
   }
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 560px) { 
   #books-shelf-phone {
     display: block !important;
   } 
@@ -23,4 +18,5 @@
   #books-shelf {
     display: none !important;
   }
+}
 }
