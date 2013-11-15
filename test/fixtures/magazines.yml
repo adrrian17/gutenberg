@@ -6,7 +6,9 @@ one:
   volume: Q1
   published_date: 2013-07-03 17:28:53
   copies: 2
+  category_id: 1
   item_types_id: 1
+  slug: strange-days
 
 two:
   id: 2
@@ -14,7 +16,9 @@ two:
   volume: Q2
   published_date: 2013-07-03 17:28:53
   copies: 5
+  category_id: 1
   item_types_id: 1
+  slug: weird-people
 
 unavailable:
   id: 3
@@ -22,4 +26,6 @@ unavailable:
   volume: Q3
   published_date: 2013-08-03 17:28:53
   copies: 0
+  category_id: 1
   item_types_id: 1
+  slug: sick-world

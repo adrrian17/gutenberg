@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @category = categories(:one)
+    request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should create category" do
     assert_difference('Category.count') do
-      post :create, category: { category: "#{@category.category} II" }
+      post :create, category: { category: "#{@category.category} II", slug: @category.category.downcase.gsub(" ", "-") }
     end
 
     assert_redirected_to category_path(assigns(:category))
@@ -35,7 +38,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update category" do
-    patch :update, id: @category, category: { category: @category.category }
+    patch :update, id: @category, category: { category: @category.category, slug: @category.category.downcase.gsub(" ", "-") }
     assert_redirected_to category_path(assigns(:category))
   end
 

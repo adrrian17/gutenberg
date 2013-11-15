@@ -1,12 +1,12 @@
 Gutenberg::Application.routes.draw do
   resources :publishing_houses
 
-  devise_for :users unless Rails.env.test?
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   get '/home', to: 'home#index'
 
   resources :categories
 
-  resources :users
+  #resources :users
 
   resources :magazines
 
@@ -18,7 +18,7 @@ Gutenberg::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -54,7 +54,7 @@ Gutenberg::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

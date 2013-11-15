@@ -1,24 +1,6 @@
-%h1 Listing magazines
-%table
-  %thead
-    %tr
-      %th Magazine
-      %th Title
-      %th Volume
-      %th Published date
-      %th Copies
-      %th
-      %th
-      %th
-  %tbody
-    - @magazines.each do |magazine|
-      %tr
-        %td= magazine.title
-        %td= magazine.volume
-        %td= magazine.published_date
-        %td= magazine.copies
-        %td= link_to 'Show', magazine
-        %td= link_to 'Edit', edit_magazine_path(magazine)
-        %td= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Magazine', new_magazine_path
+.container 
+  %h2 Revistas
+  .row
+  = render 'magazines_shelf_phone'
+  = render 'magazines_shelf'
+  %hr

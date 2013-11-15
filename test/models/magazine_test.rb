@@ -11,7 +11,12 @@ class MagazineTest < ActiveSupport::TestCase
   should have_many(:loans)
 
   test "should have item types id set to one" do
-    @magazine = magazines(:one)
-    assert_equal 1, @magazine.item_types_id
+    magazine = magazines(:one)
+    assert_equal 1, magazine.item_types_id
+  end
+
+  test "should have slug set" do
+    magazine = magazines(:one)
+    assert_equal 'strange-days', magazine.slug
   end
 end

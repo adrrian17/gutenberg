@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   category: Ciencia Ficción
+  slug: ciencia-ficcion
 
 two:
+  id: 2
   category: Terror
+  slug: terror

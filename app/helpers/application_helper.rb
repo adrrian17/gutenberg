@@ -11,4 +11,16 @@ module ApplicationHelper
     end
     return final
   end
+
+  def all_categories
+    Category.all
+  end
+
+  def all_books
+    Book.all
+  end
+
+  def all_magazines
+    Magazine.all
+  end
 end

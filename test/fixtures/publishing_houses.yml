@@ -1,4 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 DeBolsillo:
+  id: 1
   publishing_house: De Bolsillo
+  slug: de-bolsillo

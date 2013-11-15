@@ -1,0 +1,34 @@
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "Gutenberg", home_path, class: 'navbar-brand'
+    .navbar-collapse.collapse.navbar-ex1-collapse
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:id => 'login', :class => "navbar-form navbar-right"}) do |f|
+        .form-group
+          = f.email_field :email, :autofocus => true, :class => 'form-control', :placeholder => 'email'
+        .form-group
+          = f.password_field :password, :class => 'form-control', :placeholder => 'contraseña'
+        = f.submit "Iniciar sesión", :class => 'btn btn-success'
+/ = render "devise/shared/links"
+.jumbotron
+  .container   
+    .not-signed-alert
+    %h1 Bienvenido a la biblioteca.
+    %p.lead Éste es un espacio dedicado a las letras impresas, ya sea en libros o revistas, aquí podrás encontrar cientos de ideas y hasta otros mundos que los autores hayan depositado en el papel. 
+.container
+  .row
+    .col-lg-4
+      %h2 Encuentra
+      %p Existe un amplio repertorio de libros y revistas a tu disposición. Puedes buscarlos por los más leídos, por categoría o por autor, tú eliges.
+    .col-lg-4
+      %h2 Comparte
+      %p Los libros y revistas de esta biblioteca están para compartir, así que cuentas con la opción de pedirlos prestados y llevarlos a tu casa para leerlos.
+    .col-lg-4
+      %h2 Dona
+      %p ¿Tienes algún libro que crees que todos deberían leer? Excelente, puedes donar libros o revistas para aumentar el catálogo de Gutenberg.
+  %hr/

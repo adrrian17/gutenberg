@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class PublishingHousesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @publishing_house = publishing_houses(:DeBolsillo)
+    request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class PublishingHousesControllerTest < ActionController::TestCase
 
   test "should create publishing_house" do
     assert_difference('PublishingHouse.count') do
-      post :create, publishing_house: { publishing_house: "#{@publishing_house.publishing_house} II" }
+      post :create, publishing_house: { publishing_house: "#{@publishing_house.publishing_house} II", slug: @publishing_house.publishing_house.parameterize }
     end
 
     assert_redirected_to publishing_house_path(assigns(:publishing_house))
@@ -35,7 +38,7 @@ class PublishingHousesControllerTest < ActionController::TestCase
   end
 
   test "should update publishing_house" do
-    patch :update, id: @publishing_house, publishing_house: { publishing_house: @publishing_house.publishing_house }
+    patch :update, id: @publishing_house, publishing_house: { publishing_house: @publishing_house.publishing_house, slug: @publishing_house.publishing_house.parameterize }
     assert_redirected_to publishing_house_path(assigns(:publishing_house))
   end
 

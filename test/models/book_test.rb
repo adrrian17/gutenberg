@@ -5,6 +5,8 @@ class BookTest < ActiveSupport::TestCase
   should validate_presence_of(:published_date)
   should validate_presence_of(:pages)
   should validate_presence_of(:copies)
+  should validate_presence_of(:category_id)
+  should validate_presence_of(:publishing_house_id)
   should validate_uniqueness_of(:title).scoped_to(:publishing_house_id, :category_id)
   should validate_numericality_of(:pages).is_greater_than(0)
   should validate_numericality_of(:copies).is_greater_than(0)
@@ -15,15 +17,16 @@ class BookTest < ActiveSupport::TestCase
 
   test "should have many and belongs to" do
     book = books(:xkcd)
-    author = authors(:one)
-
-    book.authors << author
-
     assert_equal 1, book.authors.size
   end
 
   test "should have item types id set to zero" do
-    @book = books(:xkcd)
-    assert_equal 0, @book.item_types_id
+    book = books(:xkcd)
+    assert_equal 0, book.item_types_id
+  end
+
+  test "should have slug set" do
+    book = books(:xkcd)
+    assert_equal 'xkcd-the-full-collection', book.slug
   end
 end

@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class BooksControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @book = books(:xkcd)
+    request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class BooksControllerTest < ActionController::TestCase
 
   test "should create book" do
     assert_difference('Book.count', 1) do
-      post :create, book: { category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: "#{@book.title} II" }
+      post :create, book: { category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: "#{@book.title} II", slug: @book.title.parameterize}
     end
     @current = assigns(:book)
 
@@ -37,7 +40,7 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should update book" do
-    patch :update, id: @book, book: { category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: @book.title }
+    patch :update, id: @book, book: { category_id: @book.category_id, copies: @book.copies, pages: @book.pages, published_date: @book.published_date, publishing_house_id: @book.publishing_house_id, title: @book.title, slug: @book.title.parameterize }
     assert_redirected_to book_path(assigns(:book))
   end
 

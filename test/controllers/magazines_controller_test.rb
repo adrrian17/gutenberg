@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class MagazinesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @magazine = magazines(:one)
+    request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:ana)
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class MagazinesControllerTest < ActionController::TestCase
 
   test "should create magazine" do
     assert_difference('Magazine.count', 1, @magazine.to_yaml) do
-      post :create, magazine: { copies: @magazine.copies, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume, item_types_id: 1 }
+      post :create, magazine: { copies: @magazine.copies, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume, item_types_id: 1, slug: @magazine.title.parameterize }
     end
     
 
@@ -36,7 +39,7 @@ class MagazinesControllerTest < ActionController::TestCase
   end
 
   test "should update magazine" do
-    patch :update, id: @magazine, magazine: { copies: @magazine.copies, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume }
+    patch :update, id: @magazine, magazine: { copies: @magazine.copies, published_date: @magazine.published_date, title: @magazine.title, volume: @magazine.volume, slug: @magazine.title.parameterize }
     assert_redirected_to magazine_path(assigns(:magazine))
   end
 

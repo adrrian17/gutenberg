@@ -10,6 +10,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @author = Author.find_by_slug(params[:id])
   end
 
   # GET /authors/new
@@ -64,11 +65,11 @@ class AuthorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author
-      @author = Author.find(params[:id])
+      @author = Author.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:author_id, :first_name, :last_name, :country_id, :born_date)
+      params.require(:author).permit(:first_name, :last_name, :slug)
     end
 end

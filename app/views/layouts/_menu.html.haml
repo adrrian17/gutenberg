@@ -1,13 +1,35 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
+- if user_signed_in?
+  %nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
     .container
-      %a.brand{:href => "/index"} Gutenberg
-      .nav-collapse.collapse
-        %ul.nav
-          %li.active
-            %a{:href => "/index"} Inicio
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "Gutenberg", home_path, class: 'navbar-brand'
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        %ul.nav.navbar-nav
           %li
-            %a{:href => "#"} Categorias
+            = link_to "Libros", books_path
           %li
-            %a{:href => "#"} Cuenta
-        %button.btn.btn-danger.pull-right{:type => "submit"} Salir
+            = link_to "Autores", authors_path
+          %li
+            = link_to "Revistas", magazines_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Categorías
+              %b.caret
+            %ul.dropdown-menu
+              - all_categories.each do |cat|
+                %li
+                  %a{:href => category_path(cat.slug)} #{cat.category}
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-user
+              #{current_user.full_name}
+          %li
+            %a{:href => destroy_user_session_path, "data-method" => "delete"}
+              %span.glyphicon.glyphicon-off
+              Salir
