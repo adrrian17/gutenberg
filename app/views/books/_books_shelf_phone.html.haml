@@ -2,7 +2,7 @@
   - @books.each do |book|
     .panel.panel-default
       .panel-heading{"data-parent" => "#books-shelf-phone", "data-toggle" => "collapse", href: "#book-#{book.id}"}
-        %h4.panel-title= book.title
+        %h4.panel-title= book.short_title
       %div{id: "book-#{book.id}", class: 'panel-collapse collapse'}
         .panel-body
           .row 
@@ -11,6 +11,8 @@
               %hr
           .row
             .col-xs-12
+              %p
+                %strong= book.title
               %p
                 %strong Autor(es):
                 = raw(authors_links(book))
