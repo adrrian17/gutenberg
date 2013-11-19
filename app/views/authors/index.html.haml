@@ -1,17 +1,6 @@
 #book-preview.modal.fade
 .container
-  %h1 Autores
-  .row
-    - @authors.each do |author|
-      .book-container.col-xs-12.col-sm-6.col-md-5.col-lg-4
-        %img.pull-left{src: 'http://placehold.it/150x220'}
-        .book-info.col-xs-4.col-sm-6.col-md-6
-          .row 
-            %strong= author.full_name
-            .divider-line
-          - author.books.each do |book|
-            .row
-              = link_to book.title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
-          .row 
-            = link_to 'Más libros...', author_path(author.slug)
+  %h2 Autores
+  = render 'authors_shelf_phone'
+  = render 'authors_shelf'
   %hr/
