@@ -1,0 +1,33 @@
+#authors-shelf {
+  a {
+    width: 100%;
+  }
+
+  .panel {
+    min-height: 250px;
+  }
+}
+
+#authors-shelf-phone {
+  display: none !important;
+
+  a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 505px) { 
+  #authors-shelf-phone {
+    display: block !important;
+  } 
+
+  #authors-shelf {
+    display: none !important;
+  }
+}
+
+@media (min-width: 505px) and (max-width: 705px) {  
+ .author {
+    width: 50%;
+  }
+}
