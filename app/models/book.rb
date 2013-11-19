@@ -18,6 +18,10 @@ class Book < ActiveRecord::Base
     LOAN_PERIOD
   end
 
+  def short_title 
+    self.title.truncate(25, separator: ' ')
+  end
+
   def category_name
     self.category.category
   end
