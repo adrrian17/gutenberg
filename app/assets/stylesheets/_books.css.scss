@@ -1,29 +1,5 @@
-#books-shelf {
+#books-shelf, #books-shelf-phone {
   button {
     width: 100%;
-  }
-}
-
-#books-shelf-phone {
-  display: none !important;
-
-  button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 505px) { 
-  #books-shelf-phone {
-    display: block !important;
-  } 
-
-  #books-shelf {
-    display: none !important;
-  }
-}
-
-@media (min-width: 505px) and (max-width: 705px) { 
- .book {
-    width: 50%;
   }
 }
