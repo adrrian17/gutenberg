@@ -1,20 +1,38 @@
-#authors-shelf
+#authors-shelf.hide-for-small-only
   .row
-    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+    .small-12.columns
       .row
         - @authors.each do |author|
-          .author.col-xs-6.col-sm-4.col-md-3.col-lg-3
-            .panel.panel-default
-              .panel-body
-                .row 
-                  .col-xs-12.col-sm-12.col-md-12.col-lg-12
-                    %h4= author.full_name
-                    - author.books.each do |book|
-                      .row 
-                        .col-xs-12
-                          %p
-                            = link_to book.short_title, book_path(book.slug), class: 'book-title', data: { slug: book.slug }
-                .row 
-                  .col-xs-12.col-sm-12.col-md-12.col-lg-12
-                    - if author.books.size > 5
-                      = link_to 'Más libros...', author_path(author.slug), class: 'btn btn-success'
+          .author.small-4.columns
+            .panel
+              .row 
+                .small-12.columns
+                  %h4= author.full_name
+                  - author.books.each do |book|
+                    .row 
+                      .small-12.columns
+                        %p
+                          = link_to book.short_title, book_path(book.slug), data: { slug: book.slug }
+              .row 
+                .small-12.columns
+                  - if author.books.size > 5
+                    = link_to 'Más libros...', author_path(author.slug), class: 'button'
+// Mobile
+%dl.accordion.show-for-small-only{id: "authors-shelf-phone", "data-accordion" => ""}
+  - @authors.each do |author|
+    %dd 
+      %a{href: "#author-#{author.id}"}= author.full_name
+      %div{id: "author-#{author.id}", class: "content"}
+        .row
+          .small-12.columns
+            %p 
+              %strong Libros:
+            - author.books.each do |book|
+              .row 
+                .small-12.columns
+                  %p
+                    = link_to book.title, book_path(book.slug), data: { slug: book.slug }
+            - if author.books.size > 5
+              .row 
+                .small-12.columns
+                  = link_to 'Más libros...', author_path(author.slug), class: 'button'
