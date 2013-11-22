@@ -8,7 +8,9 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
     = render 'layouts/menu'
-    = yield
-    %footer.container
-      %p= "© Diverza #{Time.now.year}"    
+    .row
+      .small-12.columns
+        = yield
+        %footer
+          %p= "© Diverza #{Time.now.year}"    
     = javascript_include_tag "application", "data-turbolinks-track" => true
