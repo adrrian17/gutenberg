@@ -1,13 +1,8 @@
-#book-preview.modal.fade
 - unless @books.empty?
-  .container
-    %h2 Libros de #{@category.category.downcase}
-    = render 'books/books_shelf_phone'
-    = render 'books/books_shelf'
-    %hr
+  %h2 Libros de #{@category.category.downcase}
+  = render 'books/books_shelf'
+  %hr
 - unless @magazines.empty?
-  .container 
-    %h2 Revistas de #{@category.category.downcase}
-    = render 'magazines/magazines_shelf_phone'
-    = render 'magazines/magazines_shelf'
-    %hr
+  %h2 Revistas de #{@category.category.downcase}
+  = render 'magazines/magazines_shelf'
+  %hr
