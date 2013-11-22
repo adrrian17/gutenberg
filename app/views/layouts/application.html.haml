@@ -2,8 +2,8 @@
 %html
   %head
     %title Gutenberg    
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true    
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "vendor/modernizr", "data-turbolinks-track" => true    
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
@@ -11,5 +11,4 @@
     = yield
     %footer.container
       %p= "© Diverza #{Time.now.year}"    
-    = render 'slide/example.html.haml'
-    = javascript_include_tag("footer")
+    = javascript_include_tag "application", "data-turbolinks-track" => true

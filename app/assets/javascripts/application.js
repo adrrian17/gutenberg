@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
-//= require bootstrap
 //= require_tree ./modules/sessions
 //= require_tree ./modules/alert
 //= require_tree ./modules/app
 //= require underscore
+$(function(){ $(document).foundation(); });
