@@ -1,8 +1,18 @@
-- unless @books.empty?
+- if @books.empty?
+  .row
+    .small-12.small-centered.columns
+      %h2 No hay libros para esta categoria
+      %hr
+- else
   %h2 Libros de #{@category.category.downcase}
   = render 'books/books_shelf'
   %hr
-- unless @magazines.empty?
+- if @magazines.empty?
+  .row
+    .small-12.columns
+      %h2 No hay revistas para esta categoria
+      %hr
+- else
   %h2 Revistas de #{@category.category.downcase}
   = render 'magazines/magazines_shelf'
   %hr
