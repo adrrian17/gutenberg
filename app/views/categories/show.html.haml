@@ -1,13 +1,18 @@
-#book-preview.modal.fade
-- unless @books.empty?
-  .container
-    %h2 Libros de #{@category.category.downcase}
-    = render 'books/books_shelf_phone'
-    = render 'books/books_shelf'
-    %hr
-- unless @magazines.empty?
-  .container 
-    %h2 Revistas de #{@category.category.downcase}
-    = render 'magazines/magazines_shelf_phone'
-    = render 'magazines/magazines_shelf'
-    %hr
+- if @books.empty?
+  .row
+    .small-12.small-centered.columns
+      %h2 No hay libros para esta categoria
+      %hr
+- else
+  %h2 Libros de #{@category.category.downcase}
+  = render 'books/books_shelf'
+  %hr
+- if @magazines.empty?
+  .row
+    .small-12.columns
+      %h2 No hay revistas para esta categoria
+      %hr
+- else
+  %h2 Revistas de #{@category.category.downcase}
+  = render 'magazines/magazines_shelf'
+  %hr

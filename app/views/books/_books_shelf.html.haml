@@ -1,26 +1,48 @@
-#books-shelf
+#books-shelf.hide-for-small-only
   .row
-    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+    .small-12.columns
       .row
         - @books.each do |book|
-          .book.col-xs-4.col-sm-4.col-md-3.col-lg-3
-            .panel.panel-default
-              .panel-body
-                .row 
-                  .col-xs-12.col-sm-12.col-md-12.col-lg-12.text-center
-                    %img{src:'http://placehold.it/130x160'}
-                    %hr
-                .row
-                  .col-xs-12.col-sm-12.col-md-12.col-lg-12
-                    %p
-                      %strong= book.short_title
-                    %p
-                      %strong Autor(es):
-                      = raw(authors_links(book))
-                    %p 
-                      %strong Categoria: 
-                      = link_to book.category.category, category_path(book.category.slug)
-                    - if book.copies > 0 
-                      %button.btn.btn-success{:type => "submit"} Pedir prestado
-                    - else
-                      %button.btn.disabled{:type => "submit"} Copias agotadas  
+          .book.small-4.medium-6.large-4.columns
+            .panel
+              .row 
+                .small-12.columns.text-center
+                  %img{src:'http://placehold.it/130x160'}
+                  %hr
+                .small-12.columns
+                  %p
+                    %strong= book.short_title
+                  %p
+                    %strong Autor(es):
+                    = raw(authors_links(book))
+                  %p 
+                    %strong Categoria: 
+                    = link_to book.category.category, category_path(book.category.slug)
+                  - if book.copies > 0 
+                    %button.btn.btn-success{:type => "submit"} Pedir prestado
+                  - else
+                    %button.btn.disabled{:type => "submit"} Copias agotadas 
+// Mobile
+%dl.accordion.show-for-small-only{id: "books-shelf-phone", "data-accordion" => ""}
+  - @books.each do |book|
+    %dd 
+      %a{href: "#book-#{book.id}"}= book.short_title
+      %div{id: "book-#{book.id}", class: "content"}
+        .row 
+          .small-12.columns.text-center
+            %img{src: 'http://placehold.it/150x220'}
+            %hr
+        .row
+          .small-12.columns
+            %p
+              %strong= book.title
+            %p
+              %strong Autor(es):
+              = raw(authors_links(book))
+            %p 
+              %strong Categoria: 
+              = link_to book.category.category, category_path(book.category.slug)
+            - if book.copies > 0 
+              %button.btn.btn-success{:type => "submit"} Pedir prestado
+            - else
+              %button.btn.disabled Copias agotadas 
