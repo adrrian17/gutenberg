@@ -6,7 +6,7 @@ Gutenberg::Application.routes.draw do
 
   resources :categories
 
-  #resources :users
+  resources :users
 
   resources :magazines
 

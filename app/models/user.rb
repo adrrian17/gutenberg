@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :loans
 
+  before_save :set_slug
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -17,5 +19,13 @@ class User < ActiveRecord::Base
 
   def admin?
     self.is_admin
+  end
+
+  def set_slug
+    self.slug = self.full_name.parameterize
+  end
+
+  def to_param
+    slug
   end
 end
