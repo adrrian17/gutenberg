@@ -1,0 +1,17 @@
+#menu.small-2.columns
+  %h3 Gutenberg
+  .divider-line
+  %img{src:'http://adrianayala.mx/img/a0af.aav.jpeg'}
+  %h5.text-center= current_user.full_name
+  .divider-line
+  %ul.side-nav
+    %li
+      = link_to "Libros", books_path
+    %li
+      = link_to "Autores", authors_path
+    %li
+      = link_to "Revistas", magazines_path
+    %li
+      = link_to "Categorías", categories_path
+    %li
+      %a{:href => destroy_user_session_path, "data-method" => "delete"} Salir
