@@ -7,10 +7,19 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
-    = render 'layouts/menu'
     .row
-      .small-12.columns
-        = yield
-        %footer
-          %p= "© Diverza #{Time.now.year}"    
+      - if user_signed_in?
+        = render 'layouts/sidebar'
+        #content.small-10.columns
+          = yield
+          %footer
+            %hr
+            %p= "© Diverza #{Time.now.year}"
+      - else
+        = render 'layouts/menu'
+        #content.small-12.columns
+          = yield
+          %footer
+            %hr
+            %p= "© Diverza #{Time.now.year}"
     = javascript_include_tag "application", "data-turbolinks-track" => true
