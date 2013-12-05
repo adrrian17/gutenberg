@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.group_by{|c| c.category[0]}
   end
 
   # GET /categories/1
