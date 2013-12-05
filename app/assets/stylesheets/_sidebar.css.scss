@@ -10,6 +10,12 @@
     margin-top: 0.2rem;
     margin-bottom: 0.5rem;
   }
+
+  .side-nav {
+    a {
+      margin: 15px auto 15px auto;
+    }
+  }
 }
 
 .menu {
@@ -58,6 +64,7 @@
         font-size: 17px;
         width: auto;
         padding-left: 15px;
+        margin: 10px auto 10px auto;
       }
     }
   }
