@@ -1,40 +1,64 @@
-#menu {
+#mobile-menu {
+  .title {
+    font-size: 1.6875rem;
+    line-height: 1.4;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #222222;
+    text-rendering: optimizeLegibility;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.menu {
   background-color: rgba(52, 73, 94,1.0);
   text-align: center;
   position: fixed;
   height: 100%;
+  padding: 0;
+
+  #user {
+    background-color: rgba(44, 62, 80,1.0);
+    padding: 10px 0 10px 0;
+  }
 
   h3, h5 {
     color: white;
   }
 
   img {
-      margin-top: 10px;
+      margin: 10px 0 15px 0;
       border-radius: 120px;
       height: 100px;
       width: 100px;
   }
 
   .side-nav {
+    padding: 0;
+    text-align: left;
+
     li {
-      padding: 0 auto 0 auto;
+      padding: 5px 0 5px 0;
 
       &:hover {
-        background-color: rgba(44, 62, 80,1.0)
+        background-color: rgba(189, 195, 199,1.0)
       }
 
       &.active {
-        background-color: rgba(44, 62, 80,1.0);
+        background-color: rgba(189, 195, 199,1.0);
 
         &>a:first-child {
           color: white;
         }
       }
-    }
 
-    a {
-      font-size: 17px;
-      width: auto;
+      a {
+        font-size: 17px;
+        width: auto;
+        padding-left: 15px;
+      }
     }
   }
 }

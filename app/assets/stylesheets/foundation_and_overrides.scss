@@ -3,4 +3,9 @@
 // http://foundation.zurb.com/docs/
 $row-width: rem-calc(1000);
 $side-nav-link-color: white;
+$side-nav-list-margin: 0px;
+$tabbar-menu-icon-color: black !default;
+$tabbar-bg: rgba(236, 240, 241,1.0) !default;
+$tabbar-header-color: black !default;
+$tabbar-header-weight: normal !default;
 @import 'foundation';

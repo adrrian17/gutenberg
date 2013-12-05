@@ -20,4 +20,9 @@ a {
 .head-line {
   background-color: rgba(236, 240, 241,1.0);
 }
+
+@media only screen and (max-width: 64em) {
+  #content {
+    width: 100%;
+  }
 }
