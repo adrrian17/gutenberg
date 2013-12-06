@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    @sb_title = 'Libros'
   end
 
   # GET /books/1

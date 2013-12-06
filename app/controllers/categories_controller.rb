@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all.group_by{|c| c.category[0]}
+    @sb_title = 'Categorías'
   end
 
   # GET /categories/1

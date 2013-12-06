@@ -5,6 +5,7 @@ class MagazinesController < ApplicationController
   # GET /magazines.json
   def index
     @magazines = Magazine.all
+    @sb_title = 'Revistas'
   end
 
   # GET /magazines/1
