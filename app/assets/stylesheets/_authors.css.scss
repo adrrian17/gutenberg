@@ -1,7 +1,11 @@
-#authors-shelf, #authors-shelf-phone {
-  a {
-    width: 100%;
 #authors-shelf {
   margin-top: 15px;
+
+  ul.no-bullet {
+    margin-top: 10px;
+
+    li {
+      padding: 5px 0 5px 0;
+    }
   }
 }

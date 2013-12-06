@@ -2,5 +2,14 @@
   .head-line.small-12.columns.show-for-large-up
     %h3.text-center= @sb_title
 .row
-  .small-12.columns
-    = render 'authors_shelf'
+  #authors-shelf
+    .small-12.columns
+      .row
+        - @authors.keys.sort.each do |letter|
+          .small-10.medium-8.large-6.small-centered.columns
+            %h3= letter
+            .divider-line
+            %ul.no-bullet.text-center
+              -  @authors[letter].each do |auth|
+                %li
+                  = link_to auth.full_name, author_path(auth.slug)

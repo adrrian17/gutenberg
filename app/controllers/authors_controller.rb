@@ -4,7 +4,7 @@ class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.json
   def index
-    @authors = Author.all
+    @authors = Author.all.group_by{|a| a.full_name[0]}
     @sb_title = 'Autores'
   end
 
