@@ -12,13 +12,13 @@
         %img{src:'http://adrianayala.mx/img/a0af.aav.jpeg'}
         %h5.text-center= current_user.full_name
       %ul.side-nav
-        %li.active
+        %li{class: 'books-nav'}
           = link_to "Libros", books_path
-        %li
+        %li{class: 'authors-nav'}
           = link_to "Autores", authors_path
-        %li
+        %li{class: 'magazines-nav'}
           = link_to "Revistas", magazines_path
-        %li
+        %li{class: 'categories-nav'}
           = link_to "Categorías", categories_path
         %li
           %a{:href => destroy_user_session_path, "data-method" => "delete"} Salir
@@ -29,13 +29,13 @@
     %img{src:'http://adrianayala.mx/img/a0af.aav.jpeg'}
     %h5.text-center= current_user.full_name
   %ul.side-nav
-    %li.active
+    %li{class: 'books-nav'}
       = link_to "Libros", books_path
-    %li
+    %li{class: 'authors-nav'}
       = link_to "Autores", authors_path
-    %li
+    %li{class: 'magazines-nav'}
       = link_to "Revistas", magazines_path
-    %li
+    %li{class: 'categories-nav'}
       = link_to "Categorías", categories_path
     %li
       %a{:href => destroy_user_session_path, "data-method" => "delete"} Salir

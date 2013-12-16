@@ -8,9 +8,9 @@ window.Gutenberg =
 Home = (->
   $('.book-title').on 'click', (e) ->
     e.preventDefault()
-    
+
     slug = $(@).data 'slug'
-    
+
     $.getJSON("/books/#{slug}.json")
     .done (book) ->
       $('#book-preview').html(BookModal(book)).modal()
@@ -18,7 +18,7 @@ Home = (->
       console.log 'Nah'
 )
 
-BookModal = (book) -> 
+BookModal = (book) ->
   loan_button = if book.copies > 0 then "<button class='btn btn-success' type='button'>Pedir prestado</button>" else "<button class='btn btn-succes' disabled='disabled' type='button'>Copias agotadas</button>"
 
   _.template("
@@ -60,3 +60,15 @@ BookModal = (book) ->
 $(document).on 'ready page:load', ->
   # do Always
   do Home
+
+  path = window.location.pathname
+
+  switch path
+    when '/books'
+      $('.books-nav').addClass('active')
+    when '/authors'
+      $('.authors-nav').addClass('active')
+    when '/magazines'
+      $('.magazines-nav').addClass('active')
+    when '/categories'
+      $('.categories-nav').addClass('active')
