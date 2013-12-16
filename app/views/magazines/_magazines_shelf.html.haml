@@ -1,8 +1,9 @@
 #magazines-shelf
   .row
-    - @magazines.each do |magazine|
+    - all_magazines.each do |magazine|
       .small-12.medium-4.large-3.columns
         .row
           .small-12.columns.text-center
-            %img{src:'http://placehold.it/180x240'}
-            %h6= magazine.title
+            %a{href: magazine_path(magazine.slug)}
+              %img{src:'http://3.bp.blogspot.com/-KxjQVw9IacI/TrP_goH6ixI/AAAAAAAAGCE/gaZUmd8hEEI/s1600/muy+interesante+agosto+2011+-+Google+Search.png'}
+            %p= magazine.title
