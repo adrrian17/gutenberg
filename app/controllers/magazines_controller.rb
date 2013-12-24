@@ -11,7 +11,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
-    @magazines = Magazine.find_by_slug(params[:id])
+    @magazine = Magazine.find_by_slug(params[:id])
+    @sb_title = @magazine.title
   end
 
   # GET /magazines/new
