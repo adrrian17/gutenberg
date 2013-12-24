@@ -1,4 +1,15 @@
-#book-preview.modal.fade
-%h2 Autores
-= render 'authors_shelf'
-%hr/
+.row
+  .head-line.small-12.columns.show-for-large-up
+    %h3.text-center= @sb_title
+.row
+  #authors-shelf
+    .small-12.columns
+      .row
+        - @authors.keys.sort.each do |letter|
+          .small-10.medium-8.large-6.small-centered.columns
+            %h3= letter
+            .divider-line
+            %ul.no-bullet.text-center
+              -  @authors[letter].each do |auth|
+                %li
+                  = link_to auth.full_name, author_path(auth.slug)

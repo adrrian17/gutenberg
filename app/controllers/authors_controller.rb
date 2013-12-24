@@ -4,13 +4,15 @@ class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.json
   def index
-    @authors = Author.all
+    @authors = Author.all.group_by{|a| a.full_name[0]}
+    @sb_title = 'Autores'
   end
 
   # GET /authors/1
   # GET /authors/1.json
   def show
     @author = Author.find_by_slug(params[:id])
+    @sb_title = "Libros de #{@author.full_name}"
   end
 
   # GET /authors/new

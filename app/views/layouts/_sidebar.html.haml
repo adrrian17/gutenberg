@@ -1,0 +1,41 @@
+#mobile-menu.hide-for-large-up
+  %nav.tab-bar
+    %section.left-small
+      %a.left-off-canvas-toggle.menu-icon
+        %span
+    %section.middle.tab-bar-section
+      %h3.title.text-center= @sb_title
+  %aside.left-off-canvas-menu
+    .menu.small-12.columns
+      %h3 Gutenberg
+      #user
+        %img{src:'http://adrianayala.mx/img/a0af.aav.jpeg'}
+        %h5.text-center= current_user.full_name
+      %ul.side-nav
+        %li{class: 'books-nav'}
+          = link_to "Libros", books_path
+        %li{class: 'authors-nav'}
+          = link_to "Autores", authors_path
+        %li{class: 'magazines-nav'}
+          = link_to "Revistas", magazines_path
+        %li{class: 'categories-nav'}
+          = link_to "Categorías", categories_path
+        %li
+          %a{:href => destroy_user_session_path, "data-method" => "delete"} Salir
+//Large
+.menu.large-2.columns.show-for-large-up
+  %h3 Gutenberg
+  #user
+    %img{src:'http://adrianayala.mx/img/a0af.aav.jpeg'}
+    %h5.text-center= current_user.full_name
+  %ul.side-nav
+    %li{class: 'books-nav'}
+      = link_to "Libros", books_path
+    %li{class: 'authors-nav'}
+      = link_to "Autores", authors_path
+    %li{class: 'magazines-nav'}
+      = link_to "Revistas", magazines_path
+    %li{class: 'categories-nav'}
+      = link_to "Categorías", categories_path
+    %li
+      %a{:href => destroy_user_session_path, "data-method" => "delete"} Salir

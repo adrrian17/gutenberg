@@ -1,16 +1,25 @@
-%p#notice= notice
-%p
-  %strong Title:
-  = @magazine.title
-%p
-  %strong Volume:
-  = @magazine.volume
-%p
-  %strong Published date:
-  = @magazine.published_date
-%p
-  %strong Copies:
-  = @magazine.copies
-= link_to 'Edit', edit_magazine_path(@magazine)
-|
-\#{link_to 'Back', magazines_path}
+.row
+  .head-line.small-12.columns.show-for-large-up
+    %h3.text-center= @sb_title
+.row
+  .magazine.small-8.medium-8.large-6.small-centered.columns
+    .row
+      .small-12.medium-6.columns.text-center
+        %a{href: magazine_path(@magazine.slug)}
+          %img{src:'http://3.bp.blogspot.com/-KxjQVw9IacI/TrP_goH6ixI/AAAAAAAAGCE/gaZUmd8hEEI/s1600/muy+interesante+agosto+2011+-+Google+Search.png'}
+      .info.small-12.medium-6.columns
+        %p
+          Publicada -
+          %strong= "#{@magazine.published_date.strftime("%Y/%m/%d")}"
+        %p
+          Categoría -
+          = link_to @magazine.category.category, category_path(@magazine.category.slug)
+        %p
+          Copies restantes -
+          - if @magazine.copies > 0
+            %strong= @magazine.copies
+          - else
+            %strong Agotadas
+    .row
+      .small-6.columns.text-center
+        %button.success Pedir prestada

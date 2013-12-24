@@ -1,18 +1,15 @@
-%h1 Listing categories
-%table
-  %thead
-    %tr
-      %th Category
-      %th Category
-      %th
-      %th
-      %th
-  %tbody
-    - @categories.each do |category|
-      %tr
-        %td= category.category
-        %td= link_to 'Show', category
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Category', new_category_path
+.row
+  .head-line.small-12.columns.show-for-large-up
+    %h3.text-center= @sb_title
+.row
+  #categories-shelf
+    .small-12.columns
+      .row
+        - @categories.keys.sort.each do |letter|
+          .small-10.medium-8.large-6.small-centered.columns
+            %h3= letter
+            .divider-line
+            %ul.no-bullet.text-center
+              -  @categories[letter].each do |cat|
+                %li
+                  = link_to cat.category, category_path(cat.slug)
