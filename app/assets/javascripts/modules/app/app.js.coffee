@@ -62,5 +62,5 @@ $(document).on 'ready page:load', ->
   do Home
 
   loc = window.location;
-  path = loc.pathname.substring 1, loc.pathname.lastIndexOf('/')
-  $(".#{path}-nav").addClass('active')
+  path = loc.pathname.split '/'
+  $(".#{path[1]}-nav").addClass('active')
