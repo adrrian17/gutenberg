@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find_by_slug(params[:id])
+    @sb_title = @book.title
   end
 
   # GET /books/new
