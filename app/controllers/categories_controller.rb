@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_slug(params[:id])
     @books = Book.where category_id: @category.id
     @magazines = Magazine.where category_id: @category.id
+    @sb_title = "Libros y revistas de #{@category.category}"
   end
 
   # GET /categories/new
