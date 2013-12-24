@@ -61,14 +61,6 @@ $(document).on 'ready page:load', ->
   # do Always
   do Home
 
-  path = window.location.pathname
-
-  switch path
-    when '/books'
-      $('.books-nav').addClass('active')
-    when '/authors'
-      $('.authors-nav').addClass('active')
-    when '/magazines'
-      $('.magazines-nav').addClass('active')
-    when '/categories'
-      $('.categories-nav').addClass('active')
+  loc = window.location;
+  path = loc.pathname.substring 1, loc.pathname.lastIndexOf('/')
+  $(".#{path}-nav").addClass('active')
