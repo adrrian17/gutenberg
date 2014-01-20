@@ -1,4 +1,6 @@
 Gutenberg::Application.routes.draw do
+  resources :loans, :only => [:create]
+
   resources :publishing_houses
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}

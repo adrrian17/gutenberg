@@ -57,6 +57,11 @@ BookModal = (book) ->
       </div>
     </div>", book)
 
+## Router ##
+router = (exp, fn) ->
+  path = window.location.pathname
+  do fn if path.match exp
+
 $(document).on 'ready page:load', ->
   # do Always
   do Home
@@ -64,3 +69,4 @@ $(document).on 'ready page:load', ->
   loc = window.location;
   path = loc.pathname.split '/'
   $(".#{path[1]}-nav").addClass('active')
+  router '^\/magazines/.*', Loan

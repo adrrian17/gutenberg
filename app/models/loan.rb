@@ -31,9 +31,9 @@ class Loan < ActiveRecord::Base
 
   def solicited_item
     if self.item_type_id == 0
-      Book.find(self.item_id)
+      Book.find(self.slug)
     elsif self.item_type_id == 1
-      Magazine.find(self.item_id)
+      Magazine.find(self.slug)
     end
   end
 
@@ -44,7 +44,7 @@ class Loan < ActiveRecord::Base
   private
     def current_loan_cannot_exists
       query = {
-        user_id: self.user_id, 
+        user_id: self.user_id,
         item_id: self.item_id,
         item_type_id: self.item_type_id,
         returned_at: nil

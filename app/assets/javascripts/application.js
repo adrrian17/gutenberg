@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree ./modules/sessions
 //= require_tree ./modules/alert
+//= require_tree ./modules/loans
 //= require_tree ./modules/app
 //= require underscore
 $(function(){ $(document).foundation(); });

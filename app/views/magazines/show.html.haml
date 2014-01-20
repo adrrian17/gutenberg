@@ -5,8 +5,7 @@
   .magazine.small-8.medium-8.large-6.small-centered.columns
     .row
       .small-12.medium-6.columns.text-center
-        %a{href: magazine_path(@magazine.slug)}
-          %img{src:'http://3.bp.blogspot.com/-KxjQVw9IacI/TrP_goH6ixI/AAAAAAAAGCE/gaZUmd8hEEI/s1600/muy+interesante+agosto+2011+-+Google+Search.png'}
+        %img{src:'http://3.bp.blogspot.com/-KxjQVw9IacI/TrP_goH6ixI/AAAAAAAAGCE/gaZUmd8hEEI/s1600/muy+interesante+agosto+2011+-+Google+Search.png'}
       .info.small-12.medium-6.columns
         %p
           Publicada -
@@ -22,4 +21,4 @@
             %strong Agotadas
     .row
       .small-6.columns.text-center
-        %button.success Pedir prestada
+        %button.success{id: 'loan', 'data-id' => @magazine.id, 'data-type-id' => @magazine.item_types_id, 'data-user-id' => current_user.id} Pedir prestada
